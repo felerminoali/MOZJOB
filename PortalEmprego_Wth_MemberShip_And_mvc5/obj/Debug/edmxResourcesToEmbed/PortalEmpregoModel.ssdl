@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Candidato">
+    <Key>
+      <PropertyRef Name="IdCandidato" />
+    </Key>
+    <Property Name="IdCandidato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Apelido" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sexo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Candidaturas">
+    <Key>
+      <PropertyRef Name="IdVaga" />
+      <PropertyRef Name="IdCandidato" />
+    </Key>
+    <Property Name="IdVaga" Type="int" Nullable="false" />
+    <Property Name="IdCandidato" Type="int" Nullable="false" />
+    <Property Name="data" Type="datetime" />
+    <Property Name="IdstatusCanditatura" Type="int" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="isSelected" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Locais">
+    <Key>
+      <PropertyRef Name="IdLocal" />
+    </Key>
+    <Property Name="IdLocal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="isSelected" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Recrutador">
+    <Key>
+      <PropertyRef Name="IdRecrutador" />
+    </Key>
+    <Property Name="IdRecrutador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="WebSite" Type="nvarchar" MaxLength="50" />
+    <Property Name="isSelected" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusCanditura">
+    <Key>
+      <PropertyRef Name="IdstatusCanditatura" />
+    </Key>
+    <Property Name="IdstatusCanditatura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estado" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Vagas">
+    <Key>
+      <PropertyRef Name="IdVaga" />
+    </Key>
+    <Property Name="IdVaga" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="10" />
+    <Property Name="descricao" Type="nvarchar" MaxLength="50" />
+    <Property Name="DataInicio" Type="datetime" />
+    <Property Name="DataFim" Type="datetime" />
+    <Property Name="UrlImg" Type="nvarchar" MaxLength="50" />
+    <Property Name="DetailsVaga" Type="text" />
+    <Property Name="IdRecrutador" Type="int" />
+    <Property Name="IdLocal" Type="int" />
+    <Property Name="IdCategoria" Type="int" />
+    <Property Name="idStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="VagaStatus">
+    <Key>
+      <PropertyRef Name="idStatus" />
+    </Key>
+    <Property Name="idStatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="nchar" MaxLength="10" />
+    <Property Name="descricao" Type="text" />
+  </EntityType>
+  <Association Name="FK_Candidaturas_Candidato">
+    <End Role="Candidato" Type="Self.Candidato" Multiplicity="1" />
+    <End Role="Candidaturas" Type="Self.Candidaturas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candidato">
+        <PropertyRef Name="IdCandidato" />
+      </Principal>
+      <Dependent Role="Candidaturas">
+        <PropertyRef Name="IdCandidato" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Candidaturas_StatusCanditura">
+    <End Role="StatusCanditura" Type="Self.StatusCanditura" Multiplicity="0..1" />
+    <End Role="Candidaturas" Type="Self.Candidaturas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusCanditura">
+        <PropertyRef Name="IdstatusCanditatura" />
+      </Principal>
+      <Dependent Role="Candidaturas">
+        <PropertyRef Name="IdstatusCanditatura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Candidaturas_Vagas">
+    <End Role="Vagas" Type="Self.Vagas" Multiplicity="1" />
+    <End Role="Candidaturas" Type="Self.Candidaturas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vagas">
+        <PropertyRef Name="IdVaga" />
+      </Principal>
+      <Dependent Role="Candidaturas">
+        <PropertyRef Name="IdVaga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vagas_Categoria">
+    <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
+    <End Role="Vagas" Type="Self.Vagas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="Vagas">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vagas_Locais">
+    <End Role="Locais" Type="Self.Locais" Multiplicity="0..1" />
+    <End Role="Vagas" Type="Self.Vagas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locais">
+        <PropertyRef Name="IdLocal" />
+      </Principal>
+      <Dependent Role="Vagas">
+        <PropertyRef Name="IdLocal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vagas_Recrutador">
+    <End Role="Recrutador" Type="Self.Recrutador" Multiplicity="0..1" />
+    <End Role="Vagas" Type="Self.Vagas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recrutador">
+        <PropertyRef Name="IdRecrutador" />
+      </Principal>
+      <Dependent Role="Vagas">
+        <PropertyRef Name="IdRecrutador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vagas_VagaStatus">
+    <End Role="VagaStatus" Type="Self.VagaStatus" Multiplicity="0..1" />
+    <End Role="Vagas" Type="Self.Vagas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VagaStatus">
+        <PropertyRef Name="idStatus" />
+      </Principal>
+      <Dependent Role="Vagas">
+        <PropertyRef Name="idStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelsStoreContainer">
+    <EntitySet Name="Candidato" EntityType="Self.Candidato" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Candidaturas" EntityType="Self.Candidaturas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Locais" EntityType="Self.Locais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Recrutador" EntityType="Self.Recrutador" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusCanditura" EntityType="Self.StatusCanditura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vagas" EntityType="Self.Vagas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VagaStatus" EntityType="Self.VagaStatus" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Candidaturas_Candidato" Association="Self.FK_Candidaturas_Candidato">
+      <End Role="Candidato" EntitySet="Candidato" />
+      <End Role="Candidaturas" EntitySet="Candidaturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candidaturas_StatusCanditura" Association="Self.FK_Candidaturas_StatusCanditura">
+      <End Role="StatusCanditura" EntitySet="StatusCanditura" />
+      <End Role="Candidaturas" EntitySet="Candidaturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candidaturas_Vagas" Association="Self.FK_Candidaturas_Vagas">
+      <End Role="Vagas" EntitySet="Vagas" />
+      <End Role="Candidaturas" EntitySet="Candidaturas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vagas_Categoria" Association="Self.FK_Vagas_Categoria">
+      <End Role="Categoria" EntitySet="Categoria" />
+      <End Role="Vagas" EntitySet="Vagas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vagas_Locais" Association="Self.FK_Vagas_Locais">
+      <End Role="Locais" EntitySet="Locais" />
+      <End Role="Vagas" EntitySet="Vagas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vagas_Recrutador" Association="Self.FK_Vagas_Recrutador">
+      <End Role="Recrutador" EntitySet="Recrutador" />
+      <End Role="Vagas" EntitySet="Vagas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vagas_VagaStatus" Association="Self.FK_Vagas_VagaStatus">
+      <End Role="VagaStatus" EntitySet="VagaStatus" />
+      <End Role="Vagas" EntitySet="Vagas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

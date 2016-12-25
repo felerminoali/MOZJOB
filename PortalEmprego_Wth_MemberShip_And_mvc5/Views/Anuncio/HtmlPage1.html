@@ -1,0 +1,2251 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script type="text/javascript">
+        window.setInterval(function () { var r; try { r = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP") } catch (e) { } if (r) { r.open("GET", "./", true); r.send(null) } }, 840000);
+        jQuery(document).ready(function () {
+            jQuery('select').chosen({ "disable_search_threshold": 10, "allow_single_deselect": true, "placeholder_text_multiple": "Select some options", "placeholder_text_single": "Select an option", "no_results_text": "No results match" });
+        });
+
+        jQuery(document).ready(function () {
+            jQuery('.hasTooltip').tooltip({ "html": true, "container": "body" });
+        });
+        (function ($) {
+            $('#myTab a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+        })(jQuery);
+        (function ($) {
+            $(document).ready(function () {
+                // Handler for .ready() called.
+                var tab = $('<li class=" active"><a href="#general" data-toggle="tab">Content</a></li>');
+                $('#myTabTabs').append(tab);
+            });
+        })(jQuery);
+        function isBrowserIE() {
+            return navigator.appName == "Microsoft Internet Explorer";
+        }
+
+        function jInsertEditorText(text, editor) {
+            tinyMCE.execCommand('mceInsertContent', false, text);
+        }
+
+        var global_ie_bookmark = false;
+
+        function IeCursorFix() {
+            if (isBrowserIE()) {
+                tinyMCE.execCommand('mceInsertContent', false, '');
+                global_ie_bookmark = tinyMCE.activeEditor.selection.getBookmark(false);
+            }
+            return true;
+        }
+        function jSelectArticle(id, title, catid, object, link, lang) {
+            var hreflang = '';
+            if (lang !== '') {
+                var hreflang = ' hreflang = "' + lang + '"';
+            }
+            var tag = '<a' + hreflang + ' href="' + link + '">' + title + '</a>';
+            jInsertEditorText(tag, 'jform_articletext');
+            SqueezeBox.close();
+        }
+        jQuery(function ($) {
+            SqueezeBox.initialize({});
+            SqueezeBox.assign($('a.modal').get(), {
+                parse: 'rel'
+            });
+        });
+        function insertReadmore(editor) {
+            var content = tinyMCE.get('jform_articletext').getContent();
+            if (content.match(/<hr\s+id=("|')system-readmore("|')\s*\/*>/i)) {
+                alert('There is already a Read more... link that has been inserted. Only one such link is permitted. Use {pagebreak} to split the page up further.');
+                return false;
+            } else {
+                jInsertEditorText('<hr id="system-readmore" />', editor);
+            }
+        }
+
+        jQuery(function ($) {
+            SqueezeBox.initialize({});
+            SqueezeBox.assign($('a.modal-button').get(), {
+                parse: 'rel'
+            });
+        });
+        jQuery(document).ready(function () {
+            jQuery('#jform_tags').chosen({ "disable_search_threshold": 10, "allow_single_deselect": true, "placeholder_text_multiple": "Select some options", "placeholder_text_single": "Select an option", "no_results_text": "No results match" });
+        });
+
+        (function ($) {
+            $(document).ready(function () {
+                $('#jform_tags').ajaxChosen({
+                    type: 'GET',
+                    url: 'http://www.ae.lpsafety.org/index.php?option=com_tags&task=tags.searchAjax',
+                    dataType: 'json',
+                    jsonTermKey: 'like',
+                    afterTypeDelay: '500',
+                    minTermLength: '3'
+                }, function (data) {
+                    var results = [];
+
+                    $.each(data, function (i, val) {
+                        results.push({ value: val.value, text: val.text });
+                    });
+
+                    return results;
+                });
+            });
+        })(jQuery);
+
+        (function ($) {
+            $(document).ready(function () {
+
+                var customTagPrefix = '#new#';
+
+                // Method to add tags pressing enter
+                $('#jform_tags_chzn input').keyup(function (event) {
+
+                    // Tag is greater than the minimum required chars and enter pressed
+                    if (this.value && this.value.length >= 3 && (event.which === 13 || event.which === 188)) {
+
+                        // Search an highlighted result
+                        var highlighted = $('#jform_tags_chzn').find('li.active-result.highlighted').first();
+
+                        // Add the highlighted option
+                        if (event.which === 13 && highlighted.text() !== '') {
+                            // Extra check. If we have added a custom tag with this text remove it
+                            var customOptionValue = customTagPrefix + highlighted.text();
+                            $('#jform_tags option').filter(function () { return $(this).val() == customOptionValue; }).remove();
+
+                            // Select the highlighted result
+                            var tagOption = $('#jform_tags option').filter(function () { return $(this).html() == highlighted.text(); });
+                            tagOption.attr('selected', 'selected');
+                        }
+                            // Add the custom tag option
+                        else {
+                            var customTag = this.value;
+
+                            // Extra check. Search if the custom tag already exists (typed faster than AJAX ready)
+                            var tagOption = $('#jform_tags option').filter(function () { return $(this).html() == customTag; });
+                            if (tagOption.text() !== '') {
+                                tagOption.attr('selected', 'selected');
+                            }
+                            else {
+                                var option = $('<option>');
+                                option.text(this.value).val(customTagPrefix + this.value);
+                                option.attr('selected', 'selected');
+
+                                // Append the option an repopulate the chosen field
+                                $('#jform_tags').append(option);
+                            }
+                        }
+
+                        this.value = '';
+                        $('#jform_tags').trigger('liszt:updated');
+                        event.preventDefault();
+
+                    }
+                });
+            });
+        })(jQuery);
+
+        (function ($) {
+            $(document).ready(function () {
+                // Handler for .ready() called.
+                var tab = $('<li class=""><a href="#publishing" data-toggle="tab">Publishing</a></li>');
+                $('#myTabTabs').append(tab);
+            });
+        })(jQuery);
+        Calendar._DN = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]; Calendar._SDN = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]; Calendar._FD = 0; Calendar._MN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; Calendar._SMN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]; Calendar._TT = { "INFO": "About the Calendar", "ABOUT": "DHTML Date\/Time Selector\n(c) dynarch.com 2002-2005 \/ Author: Mihai Bazon\nFor latest version visit: http:\/\/www.dynarch.com\/projects\/calendar\/\nDistributed under GNU LGPL.  See http:\/\/gnu.org\/licenses\/lgpl.html for details.\n\nDate selection:\n- Use the \u00ab and \u00bb buttons to select year\n- Use the < and > buttons to select month\n- Hold mouse button on any of the above buttons for faster selection.", "ABOUT_TIME": "\n\nTime selection:\n- Click on any of the time parts to increase it\n- or Shift-click to decrease it\n- or click and drag for faster selection.", "PREV_YEAR": "Click to move to the previous year. Click and hold for a list of years.", "PREV_MONTH": "Click to move to the previous month. Click and hold for a list of the months.", "GO_TODAY": "Go to today", "NEXT_MONTH": "Click to move to the next month. Click and hold for a list of the months.", "SEL_DATE": "Select a date.", "DRAG_TO_MOVE": "Drag to move", "PART_TODAY": " Today ", "DAY_FIRST": "Display %s first", "WEEKEND": "0,6", "CLOSE": "Close", "TODAY": "Today", "TIME_PART": "(Shift-)Click or Drag to change the value.", "DEF_DATE_FORMAT": "%Y-%m-%d", "TT_DATE_FORMAT": "%a, %b %e", "WK": "wk", "TIME": "Time:" };
+        jQuery(document).ready(function ($) {
+            Calendar.setup({
+                // Id of the input field
+                inputField: "jform_publish_up",
+                // Format of the input field
+                ifFormat: "%Y-%m-%d %H:%M:%S",
+                // Trigger for the calendar (button ID)
+                button: "jform_publish_up_img",
+                // Alignment (defaults to "Bl")
+                align: "Tl",
+                singleClick: true,
+                firstDay: 0
+            });
+        });
+        jQuery(document).ready(function ($) {
+            Calendar.setup({
+                // Id of the input field
+                inputField: "jform_publish_down",
+                // Format of the input field
+                ifFormat: "%Y-%m-%d %H:%M:%S",
+                // Trigger for the calendar (button ID)
+                button: "jform_publish_down_img",
+                // Alignment (defaults to "Bl")
+                align: "Tl",
+                singleClick: true,
+                firstDay: 0
+            });
+        });
+        jQuery(document).ready(function ($) {
+            Calendar.setup({
+                // Id of the input field
+                inputField: "jform_created",
+                // Format of the input field
+                ifFormat: "%Y-%m-%d %H:%M:%S",
+                // Trigger for the calendar (button ID)
+                button: "jform_created_img",
+                // Alignment (defaults to "Bl")
+                align: "Tl",
+                singleClick: true,
+                firstDay: 0
+            });
+        });
+        jQuery(function ($) {
+            SqueezeBox.initialize({});
+            SqueezeBox.assign($('a.modal_jform_created_by').get(), {
+                parse: 'rel'
+            });
+        });
+        function jSelectUser_jform_created_by(id, title) {
+            var old_id = document.getElementById("jform_created_by_id").value;
+            if (old_id != id) {
+                document.getElementById("jform_created_by_id").value = id;
+                document.getElementById("jform_created_by").value = title;
+                document.getElementById("jform_created_by").className = document.getElementById("jform_created_by").className.replace(" invalid", "");
+
+            }
+            SqueezeBox.close();
+        }
+        jQuery(document).ready(function ($) {
+            Calendar.setup({
+                // Id of the input field
+                inputField: "jform_modified",
+                // Format of the input field
+                ifFormat: "%Y-%m-%d %H:%M:%S",
+                // Trigger for the calendar (button ID)
+                button: "jform_modified_img",
+                // Alignment (defaults to "Bl")
+                align: "Tl",
+                singleClick: true,
+                firstDay: 0
+            });
+        });
+        jQuery(function ($) {
+            SqueezeBox.initialize({});
+            SqueezeBox.assign($('a.modal_jform_modified_by').get(), {
+                parse: 'rel'
+            });
+        });
+        function jSelectUser_jform_modified_by(id, title) {
+            var old_id = document.getElementById("jform_modified_by_id").value;
+            if (old_id != id) {
+                document.getElementById("jform_modified_by_id").value = id;
+                document.getElementById("jform_modified_by").value = title;
+                document.getElementById("jform_modified_by").className = document.getElementById("jform_modified_by").className.replace(" invalid", "");
+
+            }
+            SqueezeBox.close();
+        }
+        (function ($) {
+            $(document).ready(function () {
+                // Handler for .ready() called.
+                var tab = $('<li class=""><a href="#images" data-toggle="tab">Images and links</a></li>');
+                $('#myTabTabs').append(tab);
+            });
+        })(jQuery);
+        function jInsertFieldValue(value, id) {
+            var $ = jQuery.noConflict();
+            var old_value = $("#" + id).val();
+            if (old_value != value) {
+                var $elem = $("#" + id);
+                $elem.val(value);
+                $elem.trigger("change");
+                if (typeof ($elem.get(0).onchange) === "function") {
+                    $elem.get(0).onchange();
+                }
+                jMediaRefreshPreview(id);
+            }
+        }
+        function jMediaRefreshPreview(id) {
+            var $ = jQuery.noConflict();
+            var value = $("#" + id).val();
+            var $img = $("#" + id + "_preview");
+            if ($img.length) {
+                if (value) {
+                    $img.attr("src", "http://www.ae.lpsafety.org/" + value);
+                    $("#" + id + "_preview_empty").hide();
+                    $("#" + id + "_preview_img").show()
+                } else {
+                    $img.attr("src", "")
+                    $("#" + id + "_preview_empty").show();
+                    $("#" + id + "_preview_img").hide();
+                }
+            }
+        }
+        function jMediaRefreshPreviewTip(tip) {
+            var $ = jQuery.noConflict();
+            var $tip = $(tip);
+            var $img = $tip.find("img.media-preview");
+            $tip.find("div.tip").css("max-width", "none");
+            var id = $img.attr("id");
+            id = id.substring(0, id.length - "_preview".length);
+            jMediaRefreshPreview(id);
+            $tip.show();
+        }
+        jQuery(function ($) {
+            $('.hasTipPreview').each(function () {
+                var title = $(this).attr('title');
+                if (title) {
+                    var parts = title.split('::', 2);
+                    $(this).data('tip:title', parts[0]);
+                    $(this).data('tip:text', parts[1]);
+                }
+            });
+            var JTooltips = new Tips($('.hasTipPreview').get(), { "maxTitleChars": 50, "fixed": false, "onShow": jMediaRefreshPreviewTip });
+        });
+        (function ($) {
+            $(document).ready(function () {
+                // Handler for .ready() called.
+                var tab = $('<li class=""><a href="#attrib-basic" data-toggle="tab">Options</a></li>');
+                $('#myTabTabs').append(tab);
+            });
+        })(jQuery);
+        (function ($) {
+            $(document).ready(function () {
+                // Handler for .ready() called.
+                var tab = $('<li class=""><a href="#editor" data-toggle="tab">Configure Edit Screen</a></li>');
+                $('#myTabTabs').append(tab);
+            });
+        })(jQuery);
+        (function ($) {
+            $(document).ready(function () {
+                // Handler for .ready() called.
+                var tab = $('<li class=""><a href="#permissions" data-toggle="tab">Permissions</a></li>');
+                $('#myTabTabs').append(tab);
+            });
+        })(jQuery);
+    </script>
+
+
+
+
+
+
+    <script type="text/javascript">
+        (function () {
+            var strings = { "JLIB_FORM_FIELD_INVALID": "Invalid field:&#160", "JGLOBAL_KEEP_TYPING": "Keep typing...", "JGLOBAL_LOOKING_FOR": "Looking for" };
+            if (typeof Joomla == 'undefined') {
+                Joomla = {};
+                Joomla.JText = strings;
+            }
+            else {
+                Joomla.JText.load(strings);
+            }
+        })();
+    </script>
+    <script type="text/javascript" src="http://www.ae.lpsafety.org/media/editors/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+        tinyMCE.init({
+            // General
+            directionality: "ltr",
+            language: "en",
+            mode: "specific_textareas",
+            autosave_restore_when_empty: false,
+            skin: "lightgray",
+            theme: "modern",
+            schema: "html5",
+            selector: "textarea.mce_editable",
+            // Cleanup/Output
+            inline_styles: true,
+            gecko_spellcheck: true,
+            entity_encoding: "raw",
+            valid_elements: "",
+            extended_valid_elements: "hr[id|title|alt|class|width|size|noshade]",
+            force_br_newlines: false, force_p_newlines: true, forced_root_block: 'p',
+            toolbar_items_size: "small",
+            invalid_elements: "script,applet,iframe",
+            // Plugins
+            plugins: "table link image code hr charmap autolink lists importcss",
+            // Toolbar
+            toolbar1: "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | formatselect | bullist numlist",
+            toolbar2: "outdent indent | undo redo | link unlink anchor image code | hr table | subscript superscript | charmap",
+            removed_menuitems: "newdocument",
+            // URL
+            relative_urls: true,
+            remove_script_host: false,
+            document_base_url: "http://www.ae.lpsafety.org/",
+            // Layout
+            content_css: "http://www.ae.lpsafety.org/templates/system/css/editor.css",
+            importcss_append: true,
+            // Advanced Options
+            resize: "both",
+            height: "550",
+            width: "",
+
+        });
+    </script>
+
+</head>
+<body>
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container-logo">
+            <img src="/administrator/templates/isis/images/logo.png" class="logo" alt="Associação dos Estudantes" />
+        </div>
+        <div class="container-title">
+            <h1 class="page-title">
+                <span class="icon-pencil-2 article-add"></span>
+                Article Manager: Add New Article
+            </h1>
+
+        </div>
+    </header>
+    <!-- Subheader -->
+    <a class="btn btn-subhead" data-toggle="collapse" data-target=".subhead-collapse">Toolbar		<i class="icon-wrench"></i></a>
+    <div class="subhead-collapse collapse">
+        <div class="subhead">
+            <div class="container-fluid">
+                <div id="container-collapse" class="container-collapse"></div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="btn-toolbar" id="toolbar">
+                            <div class="btn-wrapper" id="toolbar-apply">
+                                <button onclick="Joomla.submitbutton('article.apply')" class="btn btn-small btn-success">
+                                    <span class="icon-apply icon-white"></span>
+                                    Save
+                                </button>
+                            </div>
+                            <div class="btn-wrapper" id="toolbar-save">
+                                <button onclick="Joomla.submitbutton('article.save')" class="btn btn-small">
+                                    <span class="icon-save"></span>
+                                    Save &amp; Close
+                                </button>
+                            </div>
+                            <div class="btn-wrapper" id="toolbar-save-new">
+                                <button onclick="Joomla.submitbutton('article.save2new')" class="btn btn-small">
+                                    <span class="icon-save-new"></span>
+                                    Save &amp; New
+                                </button>
+                            </div>
+                            <div class="btn-wrapper" id="toolbar-cancel">
+                                <button onclick="Joomla.submitbutton('article.cancel')" class="btn btn-small">
+                                    <span class="icon-cancel"></span>
+                                    Cancel
+                                </button>
+                            </div>
+                            <div class="btn-wrapper" id="toolbar-help">
+                                <button onclick="Joomla.popupWindow('http://help.joomla.org/proxy/index.php?option=com_help&amp;amp;keyref=Help33:Content_Article_Manager_Edit', 'Help', 700, 500, 1)" rel="help" class="btn btn-small">
+                                    <span class="icon-question-sign"></span>
+                                    Help
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <form action="/administrator/index.php?option=com_content&amp;layout=edit&amp;id=0" method="post" name="adminForm" id="item-form" class="form-validate">
+
+        <div class="form-inline form-inline-header">
+
+
+            <div class="control-group ">
+                <div class="control-label">
+                    <label id="jform_title-lbl" for="jform_title" class="hasTooltip required" title="&lt;strong&gt;Title&lt;/strong&gt;">
+                        Title<span class="star">&#160;*</span>
+                    </label>
+                </div>
+                <div class="controls"><input type="text" name="jform[title]" id="jform_title" value="" class="input-xxlarge input-large-text required" size="40" required aria-required="true" /></div>
+            </div>
+
+
+            <div class="control-group ">
+                <div class="control-label">
+                    <label id="jform_alias-lbl" for="jform_alias" class="hasTooltip" title="&lt;strong&gt;Alias&lt;/strong&gt;&lt;br /&gt;The Alias will be used in the SEF URL. Leave this blank and Joomla will fill in a default value from the title. This value will depend on the SEO settings (Global Configuration-&gt;Site). &lt;br /&gt;Using Unicode will produce UTF-8 aliases. You may also enter manually any UTF-8 character. Spaces and some forbidden characters will be changed to hyphens.&lt;br /&gt;When using default transliteration it will produce an alias in lower case and with dashes instead of spaces. You may enter the Alias manually. Use lowercase letters and hyphens (-). No spaces or underscores are allowed. Default value will be a date and time if the title is typed in non-latin letters ." data-placement="bottom">
+                        Alias
+                    </label>
+                </div>
+                <div class="controls"><input type="text" name="jform[alias]" id="jform_alias" value="" size="40" placeholder="Auto-generate from title" /></div>
+            </div>
+        </div>
+
+        <div class="form-horizontal">
+
+            <ul class="nav nav-tabs" id="myTabTabs"></ul>
+            <div class="tab-content" id="myTabContent">
+
+                <div id="general" class="tab-pane active">
+                    <div class="row-fluid">
+                        <div class="span9">
+                            <fieldset class="adminform">
+                                <div class="editor">
+                                    <textarea name="jform[articletext]"
+                                              id="jform_articletext"
+                                              cols=""
+                                              rows=""
+                                              style="width: 100%; height: 500px;"
+                                              class="mce_editable"></textarea><div id="editor-xtd-buttons" class="btn-toolbar pull-left">
+                                        <a class="btn modal-button" title="Article" href="http://www.ae.lpsafety.org/administrator/index.php?option=com_content&amp;view=articles&amp;layout=modal&amp;tmpl=component&amp;a278a8492bd64f96f6e061b485076160=1" onclick="IeCursorFix(); return false;" rel="{handler: 'iframe', size: {x: 800, y: 500}}">
+                                            <i class="icon-file-add"></i> Article
+                                        </a>
+                                        <a class="btn modal-button" title="Image" href="http://www.ae.lpsafety.org/administrator/index.php?option=com_media&amp;view=images&amp;tmpl=component&amp;e_name=jform_articletext&amp;asset=com_content&amp;author=" onclick="IeCursorFix(); return false;" rel="{handler: 'iframe', size: {x: 800, y: 500}}">
+                                            <i class="icon-picture"></i> Image
+                                        </a>
+                                        <a class="btn modal-button" title="Page Break" href="http://www.ae.lpsafety.org/administrator/index.php?option=com_content&amp;view=article&amp;layout=pagebreak&amp;tmpl=component&amp;e_name=jform_articletext" onclick="IeCursorFix(); return false;" rel="{handler: 'iframe', size: {x: 500, y: 300}}">
+                                            <i class="icon-copy"></i> Page Break
+                                        </a>
+                                        <a class="btn" title="Read More" href="http://www.ae.lpsafety.org/administrator/#" onclick="insertReadmore('jform_articletext');return false;" rel="">
+                                            <i class="icon-arrow-down"></i> Read More
+                                        </a>
+                                    </div><div class="toggle-editor btn-toolbar pull-right clearfix">
+                                        <div class="btn-group">
+                                            <a class="btn" href="#"
+                                               onclick="tinyMCE.execCommand('mceToggleEditor', false, 'jform_articletext');return false;"
+                                               title="Toggle editor">
+                                                <i class="icon-eye"></i> Toggle editor
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="span3">
+                            <fieldset class="form-vertical">
+
+                                <div class="control-group ">
+                                    <div class="control-label">
+                                        <label id="jform_catid-lbl" for="jform_catid" class="hasTooltip required" title="&lt;strong&gt;Category&lt;/strong&gt;&lt;br /&gt;The category that this item is assigned to.">
+                                            Category<span class="star">&#160;*</span>
+                                        </label>
+                                    </div>
+                                    <div class="controls">
+                                        <select id="jform_catid" name="jform[catid]" class="required" required aria-required="true">
+                                            <option value="2">- Uncategorised</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group ">
+                                    <div class="control-label">
+                                        <label id="jform_tags-lbl" for="jform_tags" class="hasTooltip" title="&lt;strong&gt;Tags&lt;/strong&gt;&lt;br /&gt;Assign tags to content items. Tag names must be unique.">
+                                            Tags
+                                        </label>
+                                    </div>
+                                    <div class="controls">
+                                        <select id="jform_tags" name="jform[tags][]" class="span12" multiple>
+                                            <option value="2">Joomla</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group ">
+                                    <div class="control-label">
+                                        <label id="jform_state-lbl" for="jform_state" class="hasTooltip" title="&lt;strong&gt;Status&lt;/strong&gt;&lt;br /&gt;Set publication status.">
+                                            Status
+                                        </label>
+                                    </div>
+                                    <div class="controls">
+                                        <select id="jform_state" name="jform[state]" class="chzn-color-state" size="1">
+                                            <option value="1" selected="selected">Published</option>
+                                            <option value="0">Unpublished</option>
+                                            <option value="2">Archived</option>
+                                            <option value="-2">Trashed</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group ">
+                                    <div class="control-label">
+                                        <label id="jform_featured-lbl" for="jform_featured" class="hasTooltip" title="&lt;strong&gt;Featured&lt;/strong&gt;&lt;br /&gt;Assign the article to the featured blog layout">
+                                            Featured
+                                        </label>
+                                    </div>
+                                    <div class="controls"><fieldset id="jform_featured" class="radio btn-group btn-group-yesno"><input type="radio" id="jform_featured0" name="jform[featured]" value="1" /><label for="jform_featured0">Yes</label><input type="radio" id="jform_featured1" name="jform[featured]" value="0" checked="checked" /><label for="jform_featured1">No</label></fieldset></div>
+                                </div>
+
+
+                                <div class="control-group ">
+                                    <div class="control-label">
+                                        <label id="jform_access-lbl" for="jform_access" class="hasTooltip" title="&lt;strong&gt;Access&lt;/strong&gt;&lt;br /&gt;The access level group that is allowed to view this item.">
+                                            Access
+                                        </label>
+                                    </div>
+                                    <div class="controls">
+                                        <select id="jform_access" name="jform[access]" size="1">
+                                            <option value="5">Guest</option>
+                                            <option value="1" selected="selected">Public</option>
+                                            <option value="6">Super Users</option>
+                                            <option value="2">Registered</option>
+                                            <option value="3">Special</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group ">
+                                    <div class="control-label">
+                                        <label id="jform_language-lbl" for="jform_language" class="hasTooltip" title="&lt;strong&gt;Language&lt;/strong&gt;&lt;br /&gt;The language that the article is assigned to.">
+                                            Language
+                                        </label>
+                                    </div>
+                                    <div class="controls">
+                                        <select id="jform_language" name="jform[language]">
+                                            <option value="*">All</option>
+                                            <option value="en-GB">English (UK)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="control-group ">
+                                    <div class="control-label">
+                                        <label id="jform_version_note-lbl" for="jform_version_note" class="hasTooltip" title="&lt;strong&gt;Version Note&lt;/strong&gt;&lt;br /&gt;Enter an optional note for this version of the item.">
+                                            Version Note
+                                        </label>
+                                    </div>
+                                    <div class="controls"><input type="text" name="jform[version_note]" id="jform_version_note" value="" class="span12" size="45" /></div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="publishing" class="tab-pane">
+                    <div class="row-fluid form-horizontal-desktop">
+                        <div class="span6">
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_publish_up-lbl" for="jform_publish_up" class="hasTooltip" title="&lt;strong&gt;Start Publishing&lt;/strong&gt;&lt;br /&gt;An optional date to Start Publishing the article.">
+                                        Start Publishing
+                                    </label>
+                                </div>
+                                <div class="controls"><div class="input-append"><input type="text" title="" name="jform[publish_up]" id="jform_publish_up" value="" size="22" maxlength="45" class="input-medium hasTooltip" /><button type="button" class="btn" id="jform_publish_up_img"><i class="icon-calendar"></i></button></div></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_publish_down-lbl" for="jform_publish_down" class="hasTooltip" title="&lt;strong&gt;Finish Publishing&lt;/strong&gt;&lt;br /&gt;An optional date to Finish Publishing the article.">
+                                        Finish Publishing
+                                    </label>
+                                </div>
+                                <div class="controls"><div class="input-append"><input type="text" title="" name="jform[publish_down]" id="jform_publish_down" value="" size="22" maxlength="45" class="input-medium hasTooltip" /><button type="button" class="btn" id="jform_publish_down_img"><i class="icon-calendar"></i></button></div></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_created-lbl" for="jform_created" class="hasTooltip" title="&lt;strong&gt;Created Date&lt;/strong&gt;">
+                                        Created Date
+                                    </label>
+                                </div>
+                                <div class="controls"><div class="input-append"><input type="text" title="" name="jform[created]" id="jform_created" value="" size="22" maxlength="45" class="input-medium hasTooltip" /><button type="button" class="btn" id="jform_created_img"><i class="icon-calendar"></i></button></div></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_created_by-lbl" for="jform_created_by" class="hasTooltip" title="&lt;strong&gt;Created by&lt;/strong&gt;&lt;br /&gt;Select the name of the user who created the article.">
+                                        Created by
+                                    </label>
+                                </div>
+                                <div class="controls">
+                                    <div class="input-append">
+                                        <input type="text" id="jform_created_by" value="Select a User" readonly />
+                                        <a class="btn btn-primary modal_jform_created_by" title="Select User" href="index.php?option=com_users&amp;view=users&amp;layout=modal&amp;tmpl=component&amp;field=jform_created_by" rel="{handler: 'iframe', size: {x: 800, y: 500}}">
+                                            <i class="icon-user"></i>
+                                        </a>
+                                    </div>
+                                    <input type="hidden" id="jform_created_by_id" name="jform[created_by]" value="" />
+                                </div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_created_by_alias-lbl" for="jform_created_by_alias" class="hasTooltip" title="&lt;strong&gt;Created by alias&lt;/strong&gt;&lt;br /&gt;Enter an alias to be displayed instead of the name of the user who created the article.">
+                                        Created by alias
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[created_by_alias]" id="jform_created_by_alias" value="" size="20" /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_modified-lbl" for="jform_modified" class="hasTooltip" title="&lt;strong&gt;Modified Date&lt;/strong&gt;&lt;br /&gt;The date and time that the article was last modified.">
+                                        Modified Date
+                                    </label>
+                                </div>
+                                <div class="controls"><div><input type="text" title="" name="jform[modified]" id="jform_modified" value="" size="22" maxlength="45" class="readonly hasTooltip" readonly="readonly" /><button type="button" class="btn" id="jform_modified_img" style="display:none;"><i class="icon-calendar"></i></button></div></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_modified_by-lbl" for="jform_modified_by" class="">
+                                        Modified by
+                                    </label>
+                                </div>
+                                <div class="controls">
+                                    <div class="input-append">
+                                        <input type="text" id="jform_modified_by" value="Select a User" readonly class="readonly" />
+                                    </div>
+                                    <input type="hidden" id="jform_modified_by_id" name="jform[modified_by]" value="" />
+                                </div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_version-lbl" for="jform_version" class="hasTooltip" title="&lt;strong&gt;Revision&lt;/strong&gt;&lt;br /&gt;A count of the number of times this article has been revised.">
+                                        Revision
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[version]" id="jform_version" value="" class="readonly" size="6" readonly /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_hits-lbl" for="jform_hits" class="hasTooltip" title="&lt;strong&gt;Hits&lt;/strong&gt;&lt;br /&gt;Number of hits for this article">
+                                        Hits
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[hits]" id="jform_hits" value="" class="readonly" size="6" readonly /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_id-lbl" for="jform_id" class="hasTooltip" title="&lt;strong&gt;ID&lt;/strong&gt;&lt;br /&gt;Record number in the database">
+                                        ID
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[id]" id="jform_id" value="0" class="readonly" size="10" readonly /></div>
+                            </div>
+                        </div>
+                        <div class="span6">
+
+
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_metadesc-lbl" for="jform_metadesc" class="hasTooltip" title="&lt;strong&gt;Meta Description&lt;/strong&gt;&lt;br /&gt;An optional paragraph to be used as the description of the page in the HTML output. This will generally display in the results of search engines.">
+                                        Meta Description
+                                    </label>
+                                </div>
+                                <div class="controls"><textarea name="jform[metadesc]" id="jform_metadesc" cols="30" rows="3"></textarea></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_metakey-lbl" for="jform_metakey" class="hasTooltip" title="&lt;strong&gt;Meta Keywords&lt;/strong&gt;&lt;br /&gt;An optional comma-separated list of keywords and/or phrases to be used in the HTML output.">
+                                        Meta Keywords
+                                    </label>
+                                </div>
+                                <div class="controls"><textarea name="jform[metakey]" id="jform_metakey" cols="30" rows="3"></textarea></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_xreference-lbl" for="jform_xreference" class="hasTooltip" title="&lt;strong&gt;Key Reference&lt;/strong&gt;&lt;br /&gt;Used to store information referring to an external resource">
+                                        Key Reference
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[xreference]" id="jform_xreference" value="" size="20" /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_metadata_robots-lbl" for="jform_metadata_robots" class="hasTooltip" title="&lt;strong&gt;Robots&lt;/strong&gt;&lt;br /&gt;Robots Instructions">
+                                        Robots
+                                    </label>
+                                </div>
+                                <div class="controls">
+                                    <select id="jform_metadata_robots" name="jform[metadata][robots]">
+                                        <option value="" selected="selected">Use Global</option>
+                                        <option value="index, follow">Index, Follow</option>
+                                        <option value="noindex, follow">No index, follow</option>
+                                        <option value="index, nofollow">Index, No follow</option>
+                                        <option value="noindex, nofollow">No index, no follow</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_metadata_author-lbl" for="jform_metadata_author" class="hasTooltip" title="&lt;strong&gt;Author&lt;/strong&gt;&lt;br /&gt;The author of this content">
+                                        Author
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[metadata][author]" id="jform_metadata_author" value="" size="20" /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_metadata_rights-lbl" for="jform_metadata_rights" class="hasTooltip" title="&lt;strong&gt;Content Rights&lt;/strong&gt;&lt;br /&gt;Describe what rights others have to use this content.">
+                                        Content Rights
+                                    </label>
+                                </div>
+                                <div class="controls"><textarea name="jform[metadata][rights]" id="jform_metadata_rights" cols="30" rows="2"></textarea></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_metadata_xreference-lbl" for="jform_metadata_xreference" class="hasTooltip" title="&lt;strong&gt;External Reference&lt;/strong&gt;&lt;br /&gt;An optional reference used to link to external data sources.">
+                                        External Reference
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[metadata][xreference]" id="jform_metadata_xreference" value="" size="20" /></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="images" class="tab-pane">
+                    <div class="row-fluid form-horizontal-desktop">
+                        <div class="span6">
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_images_image_intro-lbl" for="jform_images_image_intro" class="hasTooltip" title="&lt;strong&gt;Intro Image&lt;/strong&gt;&lt;br /&gt;Image for the intro text layouts such as blogs and featured">
+                                        Intro Image
+                                    </label>
+                                </div>
+                                <div class="controls">
+                                    <div class="input-prepend input-append">
+                                        <div class="media-preview add-on">
+                                            <span class="hasTipPreview" title="&lt;strong&gt;Selected image&lt;/strong&gt;&lt;br /&gt;&lt;div id=&quot;jform_images_image_intro_preview_empty&quot;&gt;No image selected.&lt;/div&gt;&lt;div id=&quot;jform_images_image_intro_preview_img&quot; style=&quot;display:none&quot;&gt;&lt;img src=&quot;/.&quot; alt=&quot;Selected image&quot; id=&quot;jform_images_image_intro_preview&quot; class=&quot;media-preview&quot; style=&quot;max-width:200px;max-height:200px;&quot; /&gt;&lt;/div&gt;"><i class="icon-eye"></i></span>
+                                        </div>
+                                        <input type="text" name="jform[images][image_intro]" id="jform_images_image_intro" value="" readonly="readonly" class="input-small" />
+                                        <a class="modal btn" title="Select" href="index.php?option=com_media&amp;view=images&amp;tmpl=component&amp;asset=com_content&amp;author=&amp;fieldid=jform_images_image_intro&amp;folder=" rel="{handler: 'iframe', size: {x: 800, y: 500}}">
+                                            Select
+                                        </a><a class="btn hasTooltip" title="Clear" href="#" onclick="
+jInsertFieldValue('', 'jform_images_image_intro');
+return false;
+">
+                                            <i class="icon-remove"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_images_float_intro-lbl" for="jform_images_float_intro" class="hasTooltip" title="&lt;strong&gt;Image Float&lt;/strong&gt;&lt;br /&gt;Controls placement of the image">
+                                        Image Float
+                                    </label>
+                                </div>
+                                <div class="controls">
+                                    <select id="jform_images_float_intro" name="jform[images][float_intro]">
+                                        <option value="" selected="selected">Use Global</option>
+                                        <option value="right">Right</option>
+                                        <option value="left">Left</option>
+                                        <option value="none">None</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_images_image_intro_alt-lbl" for="jform_images_image_intro_alt" class="hasTooltip" title="&lt;strong&gt;Alt text&lt;/strong&gt;&lt;br /&gt;Alternative text used for visitors without access to images. Replaced with caption text if it is present.">
+                                        Alt text
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[images][image_intro_alt]" id="jform_images_image_intro_alt" value="" size="20" /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_images_image_intro_caption-lbl" for="jform_images_image_intro_caption" class="hasTooltip" title="&lt;strong&gt;Caption&lt;/strong&gt;&lt;br /&gt;Caption attached to the image">
+                                        Caption
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[images][image_intro_caption]" id="jform_images_image_intro_caption" value="" size="20" /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label"><span class="spacer"><span class="before"></span><span><hr /></span><span class="after"></span></span></div>
+                                <div class="controls"> </div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_images_image_fulltext-lbl" for="jform_images_image_fulltext" class="hasTooltip" title="&lt;strong&gt;Full article image&lt;/strong&gt;&lt;br /&gt;Image for the single article display">
+                                        Full article image
+                                    </label>
+                                </div>
+                                <div class="controls">
+                                    <div class="input-prepend input-append">
+                                        <div class="media-preview add-on">
+                                            <span class="hasTipPreview" title="&lt;strong&gt;Selected image&lt;/strong&gt;&lt;br /&gt;&lt;div id=&quot;jform_images_image_fulltext_preview_empty&quot;&gt;No image selected.&lt;/div&gt;&lt;div id=&quot;jform_images_image_fulltext_preview_img&quot; style=&quot;display:none&quot;&gt;&lt;img src=&quot;/.&quot; alt=&quot;Selected image&quot; id=&quot;jform_images_image_fulltext_preview&quot; class=&quot;media-preview&quot; style=&quot;max-width:200px;max-height:200px;&quot; /&gt;&lt;/div&gt;"><i class="icon-eye"></i></span>
+                                        </div>
+                                        <input type="text" name="jform[images][image_fulltext]" id="jform_images_image_fulltext" value="" readonly="readonly" class="input-small" />
+                                        <a class="modal btn" title="Select" href="index.php?option=com_media&amp;view=images&amp;tmpl=component&amp;asset=com_content&amp;author=&amp;fieldid=jform_images_image_fulltext&amp;folder=" rel="{handler: 'iframe', size: {x: 800, y: 500}}">
+                                            Select
+                                        </a><a class="btn hasTooltip" title="Clear" href="#" onclick="
+jInsertFieldValue('', 'jform_images_image_fulltext');
+return false;
+">
+                                            <i class="icon-remove"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_images_float_fulltext-lbl" for="jform_images_float_fulltext" class="hasTooltip" title="&lt;strong&gt;Image Float&lt;/strong&gt;&lt;br /&gt;Controls placement of the image">
+                                        Image Float
+                                    </label>
+                                </div>
+                                <div class="controls">
+                                    <select id="jform_images_float_fulltext" name="jform[images][float_fulltext]">
+                                        <option value="" selected="selected">Use Global</option>
+                                        <option value="right">Right</option>
+                                        <option value="left">Left</option>
+                                        <option value="none">None</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_images_image_fulltext_alt-lbl" for="jform_images_image_fulltext_alt" class="hasTooltip" title="&lt;strong&gt;Alt text&lt;/strong&gt;&lt;br /&gt;Alternative text used for visitors without access to images. Replaced with caption text if it is present.">
+                                        Alt text
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[images][image_fulltext_alt]" id="jform_images_image_fulltext_alt" value="" size="20" /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_images_image_fulltext_caption-lbl" for="jform_images_image_fulltext_caption" class="hasTooltip" title="&lt;strong&gt;Caption&lt;/strong&gt;&lt;br /&gt;Caption attached to the image">
+                                        Caption
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[images][image_fulltext_caption]" id="jform_images_image_fulltext_caption" value="" size="20" /></div>
+                            </div>
+                        </div>
+                        <div class="span6">
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_urls_urla-lbl" for="jform_urls_urla" class="hasTooltip" title="&lt;strong&gt;Link A&lt;/strong&gt;&lt;br /&gt;The actual link to which users will be redirected. Must be a full URL including http:// or other protocol (for example http://joomla.org).">
+                                        Link A
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="url" name="jform[urls][urla]" id="jform_urls_urla" value="" /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_urls_urlatext-lbl" for="jform_urls_urlatext" class="hasTooltip" title="&lt;strong&gt;Link A Text&lt;/strong&gt;&lt;br /&gt;Text to display for the link">
+                                        Link A Text
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[urls][urlatext]" id="jform_urls_urlatext" value="" size="20" /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_urls_targeta-lbl" for="jform_urls_targeta" class="hasTooltip" title="&lt;strong&gt;URL Target Window&lt;/strong&gt;&lt;br /&gt;Target browser window when the menu item is clicked.">
+                                        URL Target Window
+                                    </label>
+                                </div>
+                                <div class="controls">
+                                    <select id="jform_urls_targeta" name="jform[urls][targeta]">
+                                        <option value="" selected="selected">Use Global</option>
+                                        <option value="0">Open in parent window</option>
+                                        <option value="1">Open in new window</option>
+                                        <option value="2">Open in popup</option>
+                                        <option value="3">Modal</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label"><span class="spacer"><span class="before"></span><span><hr /></span><span class="after"></span></span></div>
+                                <div class="controls"> </div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_urls_urlb-lbl" for="jform_urls_urlb" class="hasTooltip" title="&lt;strong&gt;Link B&lt;/strong&gt;&lt;br /&gt;The actual link to which users will be redirected. Must be a full URL including http:// or other protocol (for example http://joomla.org).">
+                                        Link B
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="url" name="jform[urls][urlb]" id="jform_urls_urlb" value="" /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_urls_urlbtext-lbl" for="jform_urls_urlbtext" class="hasTooltip" title="&lt;strong&gt;Link B Text&lt;/strong&gt;&lt;br /&gt;Text to display for the link">
+                                        Link B Text
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[urls][urlbtext]" id="jform_urls_urlbtext" value="" size="20" /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_urls_targetb-lbl" for="jform_urls_targetb" class="hasTooltip" title="&lt;strong&gt;URL Target Window&lt;/strong&gt;&lt;br /&gt;Target browser window when the menu item is clicked.">
+                                        URL Target Window
+                                    </label>
+                                </div>
+                                <div class="controls">
+                                    <select id="jform_urls_targetb" name="jform[urls][targetb]">
+                                        <option value="" selected="selected">Use Global</option>
+                                        <option value="0">Open in parent window</option>
+                                        <option value="1">Open in new window</option>
+                                        <option value="2">Open in popup</option>
+                                        <option value="3">Modal</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label"><span class="spacer"><span class="before"></span><span><hr /></span><span class="after"></span></span></div>
+                                <div class="controls"> </div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_urls_urlc-lbl" for="jform_urls_urlc" class="hasTooltip" title="&lt;strong&gt;Link C&lt;/strong&gt;&lt;br /&gt;The actual link to which users will be redirected. Must be a full URL including http:// or other protocol (for example http://joomla.org).">
+                                        Link C
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="url" name="jform[urls][urlc]" id="jform_urls_urlc" value="" /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_urls_urlctext-lbl" for="jform_urls_urlctext" class="hasTooltip" title="&lt;strong&gt;Link C Text&lt;/strong&gt;&lt;br /&gt;Text to display for the link">
+                                        Link C Text
+                                    </label>
+                                </div>
+                                <div class="controls"><input type="text" name="jform[urls][urlctext]" id="jform_urls_urlctext" value="" size="20" /></div>
+                            </div>
+
+
+                            <div class="control-group ">
+                                <div class="control-label">
+                                    <label id="jform_urls_targetc-lbl" for="jform_urls_targetc" class="hasTooltip" title="&lt;strong&gt;URL Target Window&lt;/strong&gt;&lt;br /&gt;Target browser window when the menu item is clicked.">
+                                        URL Target Window
+                                    </label>
+                                </div>
+                                <div class="controls">
+                                    <select id="jform_urls_targetc" name="jform[urls][targetc]">
+                                        <option value="" selected="selected">Use Global</option>
+                                        <option value="0">Open in parent window</option>
+                                        <option value="1">Open in new window</option>
+                                        <option value="2">Open in popup</option>
+                                        <option value="3">Modal</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div id="attrib-basic" class="tab-pane">
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_title-lbl" for="jform_attribs_show_title" class="hasTooltip" title="&lt;strong&gt;Show Title&lt;/strong&gt;&lt;br /&gt;If set to Show, the article title is shown.">
+                                Show Title
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_title" name="jform[attribs][show_title]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="1">Show</option>
+                                <option value="0">Hide</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_link_titles-lbl" for="jform_attribs_link_titles" class="hasTooltip" title="&lt;strong&gt;Linked Titles&lt;/strong&gt;&lt;br /&gt;If set to Yes, the article title will be a link to the article.">
+                                Linked Titles
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_link_titles" name="jform[attribs][link_titles]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_tags-lbl" for="jform_attribs_show_tags" class="hasTooltip" title="&lt;strong&gt;Show Tags&lt;/strong&gt;&lt;br /&gt;Show the tags for each article">
+                                Show Tags
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_tags" name="jform[attribs][show_tags]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="1">Show</option>
+                                <option value="0">Hide</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_intro-lbl" for="jform_attribs_show_intro" class="hasTooltip" title="&lt;strong&gt;Show Intro Text&lt;/strong&gt;&lt;br /&gt;If set to Show, the Intro Text of the article will show when you drill down to the article. If set to Hide, only the part of the article after the &amp;quot;Read More&amp;quot; break will show.">
+                                Show Intro Text
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_intro" name="jform[attribs][show_intro]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="1">Show</option>
+                                <option value="0">Hide</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_info_block_position-lbl" for="jform_attribs_info_block_position" class="hasTooltip" title="&lt;strong&gt;Position of Article Info&lt;/strong&gt;&lt;br /&gt;Puts the article information block above or below the text or splits it into two separate blocks, one above and the other below.">
+                                Position of Article Info
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_info_block_position" name="jform[attribs][info_block_position]">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Above</option>
+                                <option value="1">Below</option>
+                                <option value="2">Split</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_category-lbl" for="jform_attribs_show_category" class="hasTooltip" title="&lt;strong&gt;Show Category&lt;/strong&gt;&lt;br /&gt;If set to Show, the title of the article&amp;rsquo;s category will show.">
+                                Show Category
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_category" name="jform[attribs][show_category]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_link_category-lbl" for="jform_attribs_link_category" class="hasTooltip" title="&lt;strong&gt;Link Category&lt;/strong&gt;&lt;br /&gt;If set to Yes, and if Show Category is set to 'Show', the Category Title will link to a layout showing articles in that Category.">
+                                Link Category
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_link_category" name="jform[attribs][link_category]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_parent_category-lbl" for="jform_attribs_show_parent_category" class="hasTooltip" title="&lt;strong&gt;Show Parent&lt;/strong&gt;&lt;br /&gt;If set to Show, the title of the article&amp;rsquo;s parent category will show.">
+                                Show Parent
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_parent_category" name="jform[attribs][show_parent_category]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_link_parent_category-lbl" for="jform_attribs_link_parent_category" class="hasTooltip" title="&lt;strong&gt;Link Parent&lt;/strong&gt;&lt;br /&gt;If set to Yes, and if Show Parent is set to 'Show', the Parent Category Title will link to a layout showing articles in that Category.">
+                                Link Parent
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_link_parent_category" name="jform[attribs][link_parent_category]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_author-lbl" for="jform_attribs_show_author" class="hasTooltip" title="&lt;strong&gt;Show Author&lt;/strong&gt;&lt;br /&gt;If set to Show, the Name of the article's Author will be displayed. This is a global setting but can be changed at the Category, Menu and Article levels.">
+                                Show Author
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_author" name="jform[attribs][show_author]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_link_author-lbl" for="jform_attribs_link_author" class="hasTooltip" title="&lt;strong&gt;Link Author&lt;/strong&gt;&lt;br /&gt;If set to Yes, the Name of the article's Author will be linked to its contact page. You must create a contact linked to the author's user record, &lt;strong&gt;and the &amp;quot;Content - Contact&amp;quot; plugin must be enabled&lt;/strong&gt;, for this to be in effect. This is a global setting but can be changed at the Category, Menu and Article levels.">
+                                Link Author
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_link_author" name="jform[attribs][link_author]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_create_date-lbl" for="jform_attribs_show_create_date" class="hasTooltip" title="&lt;strong&gt;Show Create Date&lt;/strong&gt;&lt;br /&gt;If set to Show, the date and time an Article was created will be displayed. This a global setting but can be changed at Menu and Article levels.">
+                                Show Create Date
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_create_date" name="jform[attribs][show_create_date]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_modify_date-lbl" for="jform_attribs_show_modify_date" class="hasTooltip" title="&lt;strong&gt;Show Modify Date&lt;/strong&gt;&lt;br /&gt;If set to Show, the date and time an Article was last modified will be displayed. This is a global setting but can be changed at the Category, Menu and Article levels.">
+                                Show Modify Date
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_modify_date" name="jform[attribs][show_modify_date]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_publish_date-lbl" for="jform_attribs_show_publish_date" class="hasTooltip" title="&lt;strong&gt;Show Publish Date&lt;/strong&gt;&lt;br /&gt;If set to Show, the date and time an Article was published will be displayed. This is a global setting but can be changed at the Category, Menu and Article levels.">
+                                Show Publish Date
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_publish_date" name="jform[attribs][show_publish_date]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_item_navigation-lbl" for="jform_attribs_show_item_navigation" class="hasTooltip" title="&lt;strong&gt;Show Navigation&lt;/strong&gt;&lt;br /&gt;If set to Show, shows a navigation link (Next, Previous) between articles.">
+                                Show Navigation
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_item_navigation" name="jform[attribs][show_item_navigation]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_icons-lbl" for="jform_attribs_show_icons" class="hasTooltip" title="&lt;strong&gt;Show Icons&lt;/strong&gt;&lt;br /&gt;Print and email will utilise Icons or Text">
+                                Show Icons
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_icons" name="jform[attribs][show_icons]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_print_icon-lbl" for="jform_attribs_show_print_icon" class="hasTooltip" title="&lt;strong&gt;Show Print Icon&lt;/strong&gt;&lt;br /&gt;Show/Hide the Item Print button.">
+                                Show Print Icon
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_print_icon" name="jform[attribs][show_print_icon]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_email_icon-lbl" for="jform_attribs_show_email_icon" class="hasTooltip" title="&lt;strong&gt;Show Email Icon&lt;/strong&gt;&lt;br /&gt;Show/Hide the email icon. This allows you to email an article.">
+                                Show Email Icon
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_email_icon" name="jform[attribs][show_email_icon]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_vote-lbl" for="jform_attribs_show_vote" class="hasTooltip" title="&lt;strong&gt;Show Voting&lt;/strong&gt;&lt;br /&gt;If set to show, a voting system will be enabled for Articles">
+                                Show Voting
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_vote" name="jform[attribs][show_vote]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_hits-lbl" for="jform_attribs_show_hits" class="hasTooltip" title="&lt;strong&gt;Show Hits&lt;/strong&gt;&lt;br /&gt;If set to Show, the number of Hits on a particular Article will be displayed. This is a global setting but can be changed at the Category, Menu and Article levels.">
+                                Show Hits
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_hits" name="jform[attribs][show_hits]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Hide</option>
+                                <option value="1">Show</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_noauth-lbl" for="jform_attribs_show_noauth" class="hasTooltip" title="&lt;strong&gt;Show Unauthorised Links&lt;/strong&gt;&lt;br /&gt;If set to Yes, links to registered content will be shown even if you are not logged-in. You will need to log in to access the full item.">
+                                Show Unauthorised Links
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_noauth" name="jform[attribs][show_noauth]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_urls_position-lbl" for="jform_attribs_urls_position" class="hasTooltip" title="&lt;strong&gt;Positioning of the Links&lt;/strong&gt;&lt;br /&gt;Display the links above or below the content">
+                                Positioning of the Links
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_urls_position" name="jform[attribs][urls_position]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">Above</option>
+                                <option value="1">Below</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label"><span class="spacer"><span class="before"></span><span><hr /></span><span class="after"></span></span></div>
+                        <div class="controls"> </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_alternative_readmore-lbl" for="jform_attribs_alternative_readmore" class="hasTooltip" title="&lt;strong&gt;Read More Text&lt;/strong&gt;&lt;br /&gt;Add a custom text instead of Read More">
+                                Read More Text
+                            </label>
+                        </div>
+                        <div class="controls"><input type="text" name="jform[attribs][alternative_readmore]" id="jform_attribs_alternative_readmore" value="" size="25" /></div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_article_layout-lbl" for="jform_attribs_article_layout" class="hasTooltip" title="&lt;strong&gt;Alternative Layout&lt;/strong&gt;&lt;br /&gt;Use a different layout from the supplied component view or overrides in the templates.">
+                                Alternative Layout
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_article_layout" name="jform[attribs][article_layout]">
+                                <optgroup label="---From Global Options---">
+                                    <option value="" selected="selected">Use Global</option>
+                                </optgroup>
+                                <optgroup id="jform_attribs_article_layout__" label="---From Component---">
+                                    <option value="_:default">Default</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="editor" class="tab-pane">
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_publishing_options-lbl" for="jform_attribs_show_publishing_options" class="hasTooltip" title="&lt;strong&gt;Show Publishing Options&lt;/strong&gt;&lt;br /&gt;Display or hide the publishing options slider in the article edit view. These options allow changes in dates and author identities.">
+                                Show Publishing Options
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_publishing_options" name="jform[attribs][show_publishing_options]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_article_options-lbl" for="jform_attribs_show_article_options" class="hasTooltip" title="&lt;strong&gt;Show Article Options&lt;/strong&gt;&lt;br /&gt;Display or hide article options slider in the backend article edit view. These options allow overriding of the global options.">
+                                Show Article Options
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_article_options" name="jform[attribs][show_article_options]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_urls_images_backend-lbl" for="jform_attribs_show_urls_images_backend" class="hasTooltip" title="&lt;strong&gt;Administrator Images and Links&lt;/strong&gt;&lt;br /&gt;Display or hide fields to insert images and links in the administrator">
+                                Administrator Images and Links
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_urls_images_backend" name="jform[attribs][show_urls_images_backend]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group ">
+                        <div class="control-label">
+                            <label id="jform_attribs_show_urls_images_frontend-lbl" for="jform_attribs_show_urls_images_frontend" class="hasTooltip" title="&lt;strong&gt;Frontend Images and Links&lt;/strong&gt;&lt;br /&gt;Display or hide fields to insert images and links when front end editing">
+                                Frontend Images and Links
+                            </label>
+                        </div>
+                        <div class="controls">
+                            <select id="jform_attribs_show_urls_images_frontend" name="jform[attribs][show_urls_images_frontend]" class="chzn-color">
+                                <option value="" selected="selected">Use Global</option>
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="permissions" class="tab-pane">
+                    <p class="rule-desc">Manage the permission settings for the user groups below. See notes at the bottom.</p>
+                    <div id="permissions-sliders" class="tabbable tabs-left">
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a href="#permission-1" data-toggle="tab">
+                                    Public
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#permission-9" data-toggle="tab">
+                                    <span class="level">&ndash;</span> Guest
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#permission-6" data-toggle="tab">
+                                    <span class="level">&ndash;</span> Manager
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#permission-7" data-toggle="tab">
+                                    <span class="level">&ndash;</span> <span class="level">&ndash;</span> Administrator
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#permission-2" data-toggle="tab">
+                                    <span class="level">&ndash;</span> Registered
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#permission-3" data-toggle="tab">
+                                    <span class="level">&ndash;</span> <span class="level">&ndash;</span> Author
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#permission-4" data-toggle="tab">
+                                    <span class="level">&ndash;</span> <span class="level">&ndash;</span> <span class="level">&ndash;</span> Editor
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#permission-5" data-toggle="tab">
+                                    <span class="level">&ndash;</span> <span class="level">&ndash;</span> <span class="level">&ndash;</span> <span class="level">&ndash;</span> Publisher
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#permission-8" data-toggle="tab">
+                                    <span class="level">&ndash;</span> Super Users
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="permission-1">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="actions" id="actions-th1">
+                                                <span class="acl-action">Action</span>
+                                            </th>
+                                            <th class="settings" id="settings-th1">
+                                                <span class="acl-action">Select New Setting <sup>1</sup></span>
+                                            </th>
+                                            <th id="aclactionth1">
+                                                <span class="acl-action">Calculated Setting <sup>2</sup></span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td headers="actions-th1">
+                                                <label for="jform_rules_core.delete_1" class="hasTooltip" title="Delete New setting for &lt;strong&gt;delete actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Delete
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th1">
+                                                <select class="input-small" name="jform[rules][core.delete][1]" id="jform_rules_core.delete_1" title="Allow or deny Delete for users in the Public group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth1">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th1">
+                                                <label for="jform_rules_core.edit_1" class="hasTooltip" title="Edit New setting for &lt;strong&gt;edit actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th1">
+                                                <select class="input-small" name="jform[rules][core.edit][1]" id="jform_rules_core.edit_1" title="Allow or deny Edit for users in the Public group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth1">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th1">
+                                                <label for="jform_rules_core.edit.state_1" class="hasTooltip" title="Edit State New setting for &lt;strong&gt;edit state actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit State
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th1">
+                                                <select class="input-small" name="jform[rules][core.edit.state][1]" id="jform_rules_core.edit.state_1" title="Allow or deny Edit State for users in the Public group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth1">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="permission-9">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="actions" id="actions-th9">
+                                                <span class="acl-action">Action</span>
+                                            </th>
+                                            <th class="settings" id="settings-th9">
+                                                <span class="acl-action">Select New Setting <sup>1</sup></span>
+                                            </th>
+                                            <th id="aclactionth9">
+                                                <span class="acl-action">Calculated Setting <sup>2</sup></span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td headers="actions-th9">
+                                                <label for="jform_rules_core.delete_9" class="hasTooltip" title="Delete New setting for &lt;strong&gt;delete actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Delete
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th9">
+                                                <select class="input-small" name="jform[rules][core.delete][9]" id="jform_rules_core.delete_9" title="Allow or deny Delete for users in the Guest group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth9">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th9">
+                                                <label for="jform_rules_core.edit_9" class="hasTooltip" title="Edit New setting for &lt;strong&gt;edit actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th9">
+                                                <select class="input-small" name="jform[rules][core.edit][9]" id="jform_rules_core.edit_9" title="Allow or deny Edit for users in the Guest group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth9">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th9">
+                                                <label for="jform_rules_core.edit.state_9" class="hasTooltip" title="Edit State New setting for &lt;strong&gt;edit state actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit State
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th9">
+                                                <select class="input-small" name="jform[rules][core.edit.state][9]" id="jform_rules_core.edit.state_9" title="Allow or deny Edit State for users in the Guest group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth9">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="permission-6">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="actions" id="actions-th6">
+                                                <span class="acl-action">Action</span>
+                                            </th>
+                                            <th class="settings" id="settings-th6">
+                                                <span class="acl-action">Select New Setting <sup>1</sup></span>
+                                            </th>
+                                            <th id="aclactionth6">
+                                                <span class="acl-action">Calculated Setting <sup>2</sup></span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td headers="actions-th6">
+                                                <label for="jform_rules_core.delete_6" class="hasTooltip" title="Delete New setting for &lt;strong&gt;delete actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Delete
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th6">
+                                                <select class="input-small" name="jform[rules][core.delete][6]" id="jform_rules_core.delete_6" title="Allow or deny Delete for users in the Manager group">
+                                                    <option value="">Inherited</option>
+                                                    <option value="1" selected="selected">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth6">
+                                                <span class="label label-success">Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th6">
+                                                <label for="jform_rules_core.edit_6" class="hasTooltip" title="Edit New setting for &lt;strong&gt;edit actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th6">
+                                                <select class="input-small" name="jform[rules][core.edit][6]" id="jform_rules_core.edit_6" title="Allow or deny Edit for users in the Manager group">
+                                                    <option value="">Inherited</option>
+                                                    <option value="1" selected="selected">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth6">
+                                                <span class="label label-success">Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th6">
+                                                <label for="jform_rules_core.edit.state_6" class="hasTooltip" title="Edit State New setting for &lt;strong&gt;edit state actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit State
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th6">
+                                                <select class="input-small" name="jform[rules][core.edit.state][6]" id="jform_rules_core.edit.state_6" title="Allow or deny Edit State for users in the Manager group">
+                                                    <option value="">Inherited</option>
+                                                    <option value="1" selected="selected">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth6">
+                                                <span class="label label-success">Allowed</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="permission-7">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="actions" id="actions-th7">
+                                                <span class="acl-action">Action</span>
+                                            </th>
+                                            <th class="settings" id="settings-th7">
+                                                <span class="acl-action">Select New Setting <sup>1</sup></span>
+                                            </th>
+                                            <th id="aclactionth7">
+                                                <span class="acl-action">Calculated Setting <sup>2</sup></span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td headers="actions-th7">
+                                                <label for="jform_rules_core.delete_7" class="hasTooltip" title="Delete New setting for &lt;strong&gt;delete actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Delete
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th7">
+                                                <select class="input-small" name="jform[rules][core.delete][7]" id="jform_rules_core.delete_7" title="Allow or deny Delete for users in the Administrator group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth7">
+                                                <span class="label label-success">Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th7">
+                                                <label for="jform_rules_core.edit_7" class="hasTooltip" title="Edit New setting for &lt;strong&gt;edit actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th7">
+                                                <select class="input-small" name="jform[rules][core.edit][7]" id="jform_rules_core.edit_7" title="Allow or deny Edit for users in the Administrator group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth7">
+                                                <span class="label label-success">Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th7">
+                                                <label for="jform_rules_core.edit.state_7" class="hasTooltip" title="Edit State New setting for &lt;strong&gt;edit state actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit State
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th7">
+                                                <select class="input-small" name="jform[rules][core.edit.state][7]" id="jform_rules_core.edit.state_7" title="Allow or deny Edit State for users in the Administrator group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth7">
+                                                <span class="label label-success">Allowed</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="permission-2">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="actions" id="actions-th2">
+                                                <span class="acl-action">Action</span>
+                                            </th>
+                                            <th class="settings" id="settings-th2">
+                                                <span class="acl-action">Select New Setting <sup>1</sup></span>
+                                            </th>
+                                            <th id="aclactionth2">
+                                                <span class="acl-action">Calculated Setting <sup>2</sup></span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td headers="actions-th2">
+                                                <label for="jform_rules_core.delete_2" class="hasTooltip" title="Delete New setting for &lt;strong&gt;delete actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Delete
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th2">
+                                                <select class="input-small" name="jform[rules][core.delete][2]" id="jform_rules_core.delete_2" title="Allow or deny Delete for users in the Registered group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth2">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th2">
+                                                <label for="jform_rules_core.edit_2" class="hasTooltip" title="Edit New setting for &lt;strong&gt;edit actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th2">
+                                                <select class="input-small" name="jform[rules][core.edit][2]" id="jform_rules_core.edit_2" title="Allow or deny Edit for users in the Registered group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth2">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th2">
+                                                <label for="jform_rules_core.edit.state_2" class="hasTooltip" title="Edit State New setting for &lt;strong&gt;edit state actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit State
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th2">
+                                                <select class="input-small" name="jform[rules][core.edit.state][2]" id="jform_rules_core.edit.state_2" title="Allow or deny Edit State for users in the Registered group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth2">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="permission-3">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="actions" id="actions-th3">
+                                                <span class="acl-action">Action</span>
+                                            </th>
+                                            <th class="settings" id="settings-th3">
+                                                <span class="acl-action">Select New Setting <sup>1</sup></span>
+                                            </th>
+                                            <th id="aclactionth3">
+                                                <span class="acl-action">Calculated Setting <sup>2</sup></span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td headers="actions-th3">
+                                                <label for="jform_rules_core.delete_3" class="hasTooltip" title="Delete New setting for &lt;strong&gt;delete actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Delete
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th3">
+                                                <select class="input-small" name="jform[rules][core.delete][3]" id="jform_rules_core.delete_3" title="Allow or deny Delete for users in the Author group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth3">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th3">
+                                                <label for="jform_rules_core.edit_3" class="hasTooltip" title="Edit New setting for &lt;strong&gt;edit actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th3">
+                                                <select class="input-small" name="jform[rules][core.edit][3]" id="jform_rules_core.edit_3" title="Allow or deny Edit for users in the Author group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth3">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th3">
+                                                <label for="jform_rules_core.edit.state_3" class="hasTooltip" title="Edit State New setting for &lt;strong&gt;edit state actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit State
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th3">
+                                                <select class="input-small" name="jform[rules][core.edit.state][3]" id="jform_rules_core.edit.state_3" title="Allow or deny Edit State for users in the Author group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth3">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="permission-4">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="actions" id="actions-th4">
+                                                <span class="acl-action">Action</span>
+                                            </th>
+                                            <th class="settings" id="settings-th4">
+                                                <span class="acl-action">Select New Setting <sup>1</sup></span>
+                                            </th>
+                                            <th id="aclactionth4">
+                                                <span class="acl-action">Calculated Setting <sup>2</sup></span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td headers="actions-th4">
+                                                <label for="jform_rules_core.delete_4" class="hasTooltip" title="Delete New setting for &lt;strong&gt;delete actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Delete
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th4">
+                                                <select class="input-small" name="jform[rules][core.delete][4]" id="jform_rules_core.delete_4" title="Allow or deny Delete for users in the Editor group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth4">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th4">
+                                                <label for="jform_rules_core.edit_4" class="hasTooltip" title="Edit New setting for &lt;strong&gt;edit actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th4">
+                                                <select class="input-small" name="jform[rules][core.edit][4]" id="jform_rules_core.edit_4" title="Allow or deny Edit for users in the Editor group">
+                                                    <option value="">Inherited</option>
+                                                    <option value="1" selected="selected">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth4">
+                                                <span class="label label-success">Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th4">
+                                                <label for="jform_rules_core.edit.state_4" class="hasTooltip" title="Edit State New setting for &lt;strong&gt;edit state actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit State
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th4">
+                                                <select class="input-small" name="jform[rules][core.edit.state][4]" id="jform_rules_core.edit.state_4" title="Allow or deny Edit State for users in the Editor group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth4">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="permission-5">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="actions" id="actions-th5">
+                                                <span class="acl-action">Action</span>
+                                            </th>
+                                            <th class="settings" id="settings-th5">
+                                                <span class="acl-action">Select New Setting <sup>1</sup></span>
+                                            </th>
+                                            <th id="aclactionth5">
+                                                <span class="acl-action">Calculated Setting <sup>2</sup></span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td headers="actions-th5">
+                                                <label for="jform_rules_core.delete_5" class="hasTooltip" title="Delete New setting for &lt;strong&gt;delete actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Delete
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th5">
+                                                <select class="input-small" name="jform[rules][core.delete][5]" id="jform_rules_core.delete_5" title="Allow or deny Delete for users in the Publisher group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth5">
+                                                <span class="label label-important">Not Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th5">
+                                                <label for="jform_rules_core.edit_5" class="hasTooltip" title="Edit New setting for &lt;strong&gt;edit actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th5">
+                                                <select class="input-small" name="jform[rules][core.edit][5]" id="jform_rules_core.edit_5" title="Allow or deny Edit for users in the Publisher group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth5">
+                                                <span class="label label-success">Allowed</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th5">
+                                                <label for="jform_rules_core.edit.state_5" class="hasTooltip" title="Edit State New setting for &lt;strong&gt;edit state actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit State
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th5">
+                                                <select class="input-small" name="jform[rules][core.edit.state][5]" id="jform_rules_core.edit.state_5" title="Allow or deny Edit State for users in the Publisher group">
+                                                    <option value="">Inherited</option>
+                                                    <option value="1" selected="selected">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth5">
+                                                <span class="label label-success">Allowed</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="tab-pane" id="permission-8">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="actions" id="actions-th8">
+                                                <span class="acl-action">Action</span>
+                                            </th>
+                                            <th class="settings" id="settings-th8">
+                                                <span class="acl-action">Select New Setting <sup>1</sup></span>
+                                            </th>
+                                            <th id="aclactionth8">
+                                                <span class="acl-action">Calculated Setting <sup>2</sup></span>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td headers="actions-th8">
+                                                <label for="jform_rules_core.delete_8" class="hasTooltip" title="Delete New setting for &lt;strong&gt;delete actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Delete
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th8">
+                                                <select class="input-small" name="jform[rules][core.delete][8]" id="jform_rules_core.delete_8" title="Allow or deny Delete for users in the Super Users group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth8">
+                                                <span class="label label-success"><i class="icon-lock icon-white"></i> Allowed (Super User)</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th8">
+                                                <label for="jform_rules_core.edit_8" class="hasTooltip" title="Edit New setting for &lt;strong&gt;edit actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th8">
+                                                <select class="input-small" name="jform[rules][core.edit][8]" id="jform_rules_core.edit_8" title="Allow or deny Edit for users in the Super Users group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth8">
+                                                <span class="label label-success"><i class="icon-lock icon-white"></i> Allowed (Super User)</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td headers="actions-th8">
+                                                <label for="jform_rules_core.edit.state_8" class="hasTooltip" title="Edit State New setting for &lt;strong&gt;edit state actions&lt;/strong&gt; on this article and the calculated setting based on the parent category and group permissions.">
+                                                    Edit State
+                                                </label>
+                                            </td>
+                                            <td headers="settings-th8">
+                                                <select class="input-small" name="jform[rules][core.edit.state][8]" id="jform_rules_core.edit.state_8" title="Allow or deny Edit State for users in the Super Users group">
+                                                    <option value="" selected="selected">Inherited</option>
+                                                    <option value="1">Allowed</option>
+                                                    <option value="0">Denied</option>
+                                                </select>&#160;
+                                            </td>
+                                            <td headers="aclactionth8">
+                                                <span class="label label-success"><i class="icon-lock icon-white"></i> Allowed (Super User)</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert">
+                        1. If you change the setting, it will apply to this article. Note that:<br /><em>Inherited</em> means that the permissions from global configuration, parent group and category will be used.<br /><em>Denied</em> means that no matter what the global configuration, parent group or category settings are, the group being edited cannot take this action on this article.<br /><em>Allowed</em> means that the group being edited will be able to take this action for this article (but if this is in conflict with the global configuration, parent group or category it will have no impact; a conflict will be indicated by <em>Not Allowed (Locked)</em> under Calculated Settings).<br />2. If you select a new setting, click <em>Save</em> to refresh the calculated settings.
+                    </div>
+                </div>
+
+            </div>
+            <input type="hidden" name="task" value="" />
+            <input type="hidden" name="return" value="" />
+            <input type="hidden" name="a278a8492bd64f96f6e061b485076160" value="1" />
+
+        </div>
+    </form>
+
+
+</body>
+</html>

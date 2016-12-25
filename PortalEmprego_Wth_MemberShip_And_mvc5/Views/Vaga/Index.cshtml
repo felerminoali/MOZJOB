@@ -1,0 +1,101 @@
+﻿@model IEnumerable<PortalEmprego_Wth_MemberShip_And_mvc5.Models.Vaga>
+
+
+@{
+    ViewBag.Title = "Anuncios de Vagas";
+}
+
+
+<h2>Anuncios de Vagas</h2>
+
+@section Features
+{
+    <div class="list-group">
+
+        <a href="@Url.Action("Index", "Home")" class="list-group-item list-group-item-heading">Anucios de Vagas</a>
+        <a href="@Url.Action("Create", "Recrutador")" class="list-group-item list-group-item-heading">Adicinar recrutador</a>
+        <a href="@Url.Action("Create", "Categoria" )" class="list-group-item list-group-item-heading">Adicinar Categorias</a>
+        <a href="@Url.Action( "Create", "Lacai")" class="list-group-item list-group-item-heading">Adicinar Locais</a>
+    </div>
+
+}
+
+<a id="listlink" href="#">List view</a> |
+<a id="gridlink" href="#">Grid view</a>
+
+
+
+<div id="divlist">
+    <p>
+        <a href="@Url.Action("Create", "Vaga")" class="btn btn-primary" role="button">Criar</a>
+    </p>
+
+
+    <fieldset>
+        <table class="table table-hover table-condensed">
+
+            <tr>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.IdVaga)*@
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.descricao)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Recrutador.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Locai.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categoria.Nome)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.DataInicio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataFim)
+                </th>
+
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+
+            @foreach (var vaga in Model)
+            {
+                @Html.Partial("_ListVagas", vaga)
+            }
+
+        </table>
+    </fieldset>
+</div>
+
+<div id="divgrid" style="display:none">
+
+    @foreach (var vaga in Model)
+    {
+        @Html.Partial("_GridVagas", vaga)
+    }
+
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#gridlink").click(function () {
+                $("#divlist").hide();
+                $("#divgrid").show();
+            });
+            $("#listlink").click(function () {
+                $("#divlist").show();
+                $("#divgrid").hide();
+            });
+        })
+    </script>
+}

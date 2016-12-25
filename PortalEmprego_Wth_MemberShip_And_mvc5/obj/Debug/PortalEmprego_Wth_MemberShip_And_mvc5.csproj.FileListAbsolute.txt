@@ -1,0 +1,271 @@
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PortalEmprego_Wth_MemberShip_And_mvc5.dll.config
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PortalEmprego_Wth_MemberShip_And_mvc5.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PortalEmprego_Wth_MemberShip_And_mvc5.pdb
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Antlr3.Runtime.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.SqlServer.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Core.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Owin.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Host.SystemWeb.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Cookies.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Facebook.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Google.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.OAuth.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Twitter.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Web.Infrastructure.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Newtonsoft.Json.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Owin.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Helpers.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Mvc.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Optimization.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Razor.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Deployment.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Razor.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebGrease.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.Data.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.WebData.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Helpers.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Mvc.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Optimization.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Razor.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Deployment.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Razor.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Newtonsoft.Json.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Antlr3.Runtime.pdb
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.Data.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.WebData.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.SqlServer.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Core.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Owin.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Host.SystemWeb.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Facebook.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Cookies.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.OAuth.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Google.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Twitter.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\obj\Debug\PortalEmprego_Wth_MemberShip_And_mvc5.csprojResolveAssemblyReference.cache
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\obj\Debug\PortalEmprego_Wth_MemberShip_And_mvc5.dll
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\obj\Debug\PortalEmprego_Wth_MemberShip_And_mvc5.pdb
+g:\doc\visual studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Web.Helpers.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Portable.Licensing.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\T4MVCExtensions.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\TwitterBootstrapMVC5.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Portable.Licensing.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PortalEmprego_Wth_MemberShip_And_mvc5.dll.config
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PortalEmprego_Wth_MemberShip_And_mvc5.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PortalEmprego_Wth_MemberShip_And_mvc5.pdb
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Antlr3.Runtime.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.SqlServer.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Core.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Owin.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Host.SystemWeb.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Cookies.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Facebook.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Google.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.OAuth.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Twitter.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Web.Helpers.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Web.Infrastructure.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Newtonsoft.Json.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Owin.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Portable.Licensing.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Helpers.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Mvc.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Optimization.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Razor.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Deployment.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Razor.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\T4MVCExtensions.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\TwitterBootstrapMVC5.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebActivatorEx.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebGrease.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.Data.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.WebData.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Portable.Licensing.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Helpers.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Razor.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Deployment.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Razor.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Mvc.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Optimization.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Newtonsoft.Json.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Antlr3.Runtime.pdb
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.Data.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.WebData.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.SqlServer.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Core.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Owin.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Host.SystemWeb.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Facebook.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Cookies.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.OAuth.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Google.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Twitter.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\obj\Debug\PortalEmprego_Wth_MemberShip_And_mvc5.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\obj\Debug\PortalEmprego_Wth_MemberShip_And_mvc5.pdb
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\obj\Debug\PortalEmprego_Wth_MemberShip_And_mvc5.csprojResolveAssemblyReference.cache
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PagedList.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PagedList.Mvc.dll
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PagedList.xml
+G:\doc\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PagedList.Mvc.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PortalEmprego_Wth_MemberShip_And_mvc5.dll.config
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PortalEmprego_Wth_MemberShip_And_mvc5.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PortalEmprego_Wth_MemberShip_And_mvc5.pdb
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Antlr3.Runtime.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.SqlServer.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Core.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Owin.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Host.SystemWeb.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Cookies.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Facebook.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Google.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.OAuth.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Twitter.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Web.Helpers.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Web.Infrastructure.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Newtonsoft.Json.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Owin.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PagedList.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PagedList.Mvc.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Portable.Licensing.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Helpers.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Mvc.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Optimization.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Razor.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Deployment.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Razor.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\T4MVCExtensions.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\TwitterBootstrapMVC5.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebActivatorEx.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebGrease.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.Data.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.WebData.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PagedList.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PagedList.Mvc.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Portable.Licensing.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Helpers.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Razor.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Deployment.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Razor.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Mvc.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Optimization.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Newtonsoft.Json.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Antlr3.Runtime.pdb
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.Data.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.WebData.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.SqlServer.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Core.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Owin.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Host.SystemWeb.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Facebook.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Cookies.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.OAuth.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Google.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Twitter.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\obj\Debug\PortalEmprego_Wth_MemberShip_And_mvc5.csprojResolveAssemblyReference.cache
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\obj\Debug\PortalEmprego_Wth_MemberShip_And_mvc5.dll
+G:\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\obj\Debug\PortalEmprego_Wth_MemberShip_And_mvc5.pdb
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PortalEmprego_Wth_MemberShip_And_mvc5.dll.config
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PortalEmprego_Wth_MemberShip_And_mvc5.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PortalEmprego_Wth_MemberShip_And_mvc5.pdb
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Antlr3.Runtime.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.SqlServer.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Web.Helpers.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Newtonsoft.Json.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Owin.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PagedList.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PagedList.Mvc.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Portable.Licensing.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Helpers.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Mvc.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Optimization.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Razor.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Deployment.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Razor.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\T4MVCExtensions.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\TwitterBootstrapMVC5.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebActivatorEx.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebGrease.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.Data.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.WebData.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PagedList.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\PagedList.Mvc.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Portable.Licensing.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Helpers.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Razor.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Deployment.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.WebPages.Razor.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Mvc.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\System.Web.Optimization.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Newtonsoft.Json.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Antlr3.Runtime.pdb
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.Data.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\WebMatrix.WebData.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\EntityFramework.SqlServer.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\obj\Debug\PortalEmprego_Wth_MemberShip_And_mvc5.csprojResolveAssemblyReference.cache
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\obj\Debug\PortalEmprego_Wth_MemberShip_And_mvc5.dll
+C:\Users\feler\OneDrive\Documentos\Visual Studio 2013\Projects\PortalEmprego_Wth_MemberShip_And_mvc5 - Ver 3\PortalEmprego_Wth_MemberShip_And_mvc5\obj\Debug\PortalEmprego_Wth_MemberShip_And_mvc5.pdb

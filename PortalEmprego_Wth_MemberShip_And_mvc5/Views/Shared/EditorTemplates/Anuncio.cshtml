@@ -1,0 +1,118 @@
+﻿@model PortalEmprego_Wth_MemberShip_And_mvc5.Models.Anuncio
+
+@*<tr >
+
+
+        <td class="order nowrap center hidden-phone">
+            <span class="sortable-handler inactive tip-top hasTooltip" title="Please sort by order to enable reordering">
+                <i class="icon-menu"></i>
+            </span>
+        </td>
+        <td class="center hidden-phone">
+            <input type="checkbox" id="anuncioIdsSelected" name="anuncioIdsSelected" value="@Model.Id" />
+        </td>
+
+        <td class="">
+            <div class="pull-left">
+                <a href="@Url.Action("Details", "Anuncio", new { id = @Model.Id })">
+                    @Model.title
+                </a>
+            </div>
+
+        </td>
+
+
+
+        <td class="small hidden-phone">
+            <a href="#" title="Author">
+
+                @Model.created_by
+            </a>
+        </td>
+
+        <td class="small hidden-phone">
+            All
+        </td>
+
+    </tr>*@
+
+<tr>
+
+    <td>
+        <div class="pull-left">
+
+            <div class="container">
+
+                <img src="~/Content/images/img.png" width="100" height="150" />
+                @*<img data-src="holder.js/1200x100/sky" class="img-responsive" alt="Generic placeholder thumbnail">*@
+
+
+            </div>
+
+        </div>
+    </td>
+    <td>
+        <div class="pull-left">
+            @if (@Model.category != null)
+            {
+                <a>
+                    <p><h2><small>@Model.Category1.Name</small></h2></p>
+                </a>
+            }
+
+
+
+
+
+            @if (@Model.title != null)
+            {
+                <h5>
+
+
+                    <a href="@Url.Action("Details", "Anuncio", new { id = @Model.Id })">
+                        @Model.title
+                    </a>
+                    <br />
+
+                </h5>
+            }
+
+
+
+            @if (@Model.created_by != null)
+            {
+                <p><h3><small>@Model.Category1.Name</small></h3></p>
+                <a href="@Url.Action("Details", "Anuncio", new { id = @Model.Id })">
+                    @Model.Recrutador.Name
+                </a>
+            }
+
+            @if (@Model.Local != null)
+            {
+                <h5>
+                    <p>
+                        <small>Em:</small>
+                        <a href="@Url.Action("Details", "Anuncio", new { id = @Model.Id })">
+                            @Model.Local.Name
+                        </a>
+                    </p>
+                    <br />
+
+                </h5>
+            }
+        </div>
+
+
+
+
+    </td>
+    <td>
+        <div class="pull-right">
+            <br />
+            <p>Mar 25, 2015</p>
+            <br />
+            <h3> <span class="label label-success">Candidata-se</span></h3>
+        </div>
+
+    </td>
+</tr>

@@ -1,0 +1,138 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/bootstrap/datepicker")
+    
+  
+        
+
+
+</head>
+
+<body style="overflow-x:hidden;">
+
+    <!--
+        <div class="page-header no-margin no-padding">
+
+            <div class="container">
+            <h1>Example page header <small>Subtext for header</small></h1>
+
+            </div>
+        </div>
+    -->
+
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin:0px;">
+        <div class="container-fluid">
+
+
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-WDM-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+
+                <a class="navbar-brand" href="#">WebDevMentos</a>
+            </div>
+
+
+            <div class="collapse navbar-collapse navbar-right" id="bs-WDM-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Dropdown <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                    @Html.Partial("_LoginPartial")
+
+
+                </ul>
+                @*@Html.Partial("_LoginPartial")*@
+            </div>
+
+        </div>
+    </nav>
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+    <!-- Start of the Fotter -->
+
+    <footer class="site-fotter">
+
+        <div class="container">
+
+            <div class="row">
+                <address>
+                    <strong>Contact</strong><br>
+                    #9999, Street of <br>place, City of place, <br> Country <br>
+                </address>
+
+                <div class="bottom-footer">
+
+                    <div class="col-md-5">
+                        Copyright WebDevMentos 2015
+
+
+                    </div>
+                    <div class="col-md-7">
+
+
+
+                        <ul class="footer-nav">
+
+
+                            <li><a href="Index10.html">Index</a></li>
+                            <li><a href="blog.html">blog</a></li>
+                            <li><a href="blog.html">Link</a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- End of the Footer -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/datepicker")
+    @Scripts.Render("//tinymce.cachefly.net/4.0/tinymce.min.js")
+
+    @RenderSection("Scripts", required: true)
+
+
+
+
+</body>
+</html>

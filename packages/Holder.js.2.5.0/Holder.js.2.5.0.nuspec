@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Holder.js</id>
+    <version>2.5.0</version>
+    <authors>Ivan Malopinsky</authors>
+    <owners>Ivan Malopinsky</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>http://imsky.github.com/holder/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Holder uses the canvas element and the data URI scheme to render image placeholders entirely in browser.</description>
+    <releaseNotes>- Invisible placeholders are now rendered automatically.
+            - Font size units now default to points (pt) from the previous hard-coded default of px.
+            - Resizable placeholders can pause and resume their rendering using the setResizeUpdate method.
+            - Font size can now be set as part of the placeholder URL.
+            - The URL used to generate the placeholder is embedded inside the generated image (SVG only).
+            - Holder.version now reports the library version.</releaseNotes>
+    <tags>Images Placeholders Client-Side Canvas Generation Development</tags>
+  </metadata>
+</package>
