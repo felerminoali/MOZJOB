@@ -1,6 +1,6 @@
 ---------------------------------------
 
-MYMOZ - An job portal for mozambique
+MOZJOB - An job portal for mozambique
 
 Developer: Felermino Ali
 Status: Under Construction
