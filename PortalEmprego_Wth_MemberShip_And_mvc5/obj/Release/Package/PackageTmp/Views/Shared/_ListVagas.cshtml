@@ -1,0 +1,48 @@
+﻿@model PortalEmprego_Wth_MemberShip_And_mvc5.Models.Vaga
+
+
+        <tr>
+            <td>
+                @Html.HiddenFor(modelItem => modelItem.IdVaga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.Codigo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.Recrutador.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.Locai.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.Categoria.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.DataInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.DataFim)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.UrlImg)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.DetailsVaga)
+                </td>*@
+
+            <td>
+                <a href="@Url.Action("Edit", "Vaga", new { id=@Model.IdVaga})" class="btn btn-default btn-xs" role="button">Editar</a>
+            </td>
+            <td>
+                <a href="@Url.Action("Details", "Vaga", new { id = @Model.IdVaga })" class="btn btn-default btn-xs" role="button">Detalhes</a>
+
+            </td>
+            <td>
+                <a href="@Url.Action("Delete", "Vaga", new { id = @Model.IdVaga })" class="btn btn-default btn-xs" role="button">Apagar</a>
+            </td>
+        </tr>
+
+

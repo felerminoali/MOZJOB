@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="mozjob" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\feler\\OneDrive\\Documentos\\Visual\ Studio\ 2013\\Projects\\PortalEmprego_Wth_MemberShip_And_mvc5\ -\ Ver\ 3\\PortalEmprego_Wth_MemberShip_And_mvc5\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\feler\\OneDrive\\Documentos\\Visual\ Studio\ 2013\\Projects\\PortalEmprego_Wth_MemberShip_And_mvc5\ -\ Ver\ 3\\PortalEmprego_Wth_MemberShip_And_mvc5\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=DESKTOP-4DUP971;Initial Catalog=PortalEmprego;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\feler\\OneDrive\\Documentos\\Visual\ Studio\ 2013\\Projects\\PortalEmprego_Wth_MemberShip_And_mvc5\ -\ Ver\ 3\\PortalEmprego_Wth_MemberShip_And_mvc5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="PortalEmpregoContextDB-Web.config Connection String" description="" value="metadata=res://*/Models.PortalEmpregoModel.csdl|res://*/Models.PortalEmpregoModel.ssdl|res://*/Models.PortalEmpregoModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=DESKTOP-4DUP971;Initial Catalog=PortalEmprego;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\feler\\OneDrive\\Documentos\\Visual\ Studio\ 2013\\Projects\\PortalEmprego_Wth_MemberShip_And_mvc5\ -\ Ver\ 3\\PortalEmprego_Wth_MemberShip_And_mvc5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PortalEmpregoContextDB']/@connectionString" />
+  </parameter>
+  <parameter name="PortalEmpregoContextDBa-Web.config Connection String" description="" value="metadata=res://*/PortalEmpregosModel.csdl|res://*/PortalEmpregosModel.ssdl|res://*/PortalEmpregosModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-4DUP971;initial catalog=PortalEmprego;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\feler\\OneDrive\\Documentos\\Visual\ Studio\ 2013\\Projects\\PortalEmprego_Wth_MemberShip_And_mvc5\ -\ Ver\ 3\\PortalEmprego_Wth_MemberShip_And_mvc5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PortalEmpregoContextDBa']/@connectionString" />
+  </parameter>
+  <parameter name="PortalEmpregoEntities-Web.config Connection String" description="" value="metadata=res://*/PortalEmpregoModel.csdl|res://*/PortalEmpregoModel.ssdl|res://*/PortalEmpregoModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-4DUP971;initial catalog=PortalEmprego;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\feler\\OneDrive\\Documentos\\Visual\ Studio\ 2013\\Projects\\PortalEmprego_Wth_MemberShip_And_mvc5\ -\ Ver\ 3\\PortalEmprego_Wth_MemberShip_And_mvc5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PortalEmpregoEntities']/@connectionString" />
+  </parameter>
+</parameters>

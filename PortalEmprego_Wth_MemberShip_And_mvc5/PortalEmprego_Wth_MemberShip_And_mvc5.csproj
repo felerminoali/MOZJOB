@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -208,7 +209,6 @@
     <Compile Include="Models\Category.cs">
       <DependentUpon>PortalEmpregoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\VagaController.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\language.cs">
       <DependentUpon>PortalEmpregoModel.tt</DependentUpon>
@@ -222,7 +222,6 @@
     <Compile Include="Models\RecrutadorPartial.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AccountOneController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -278,23 +277,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\datepicker.css" />
     <Content Include="Content\datepicker3.css" />
-    <Content Include="Content\images\animated-overlay.gif" />
     <Content Include="Content\images\img.png" />
-    <Content Include="Content\images\test.png" />
-    <Content Include="Content\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
-    <Content Include="Content\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
-    <Content Include="Content\images\ui-bg_flat_10_000000_40x100.png" />
-    <Content Include="Content\images\ui-bg_glass_100_f6f6f6_1x400.png" />
-    <Content Include="Content\images\ui-bg_glass_100_fdf5ce_1x400.png" />
-    <Content Include="Content\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
-    <Content Include="Content\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
-    <Content Include="Content\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
-    <Content Include="Content\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\images\ui-icons_228ef1_256x240.png" />
-    <Content Include="Content\images\ui-icons_ef8c08_256x240.png" />
-    <Content Include="Content\images\ui-icons_ffd27a_256x240.png" />
-    <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\joomlacss\hathor\template.css" />
     <Content Include="Content\joomlacss\hathor\template_rtl.css" />
     <Content Include="Content\joomlacss\isis\template-rtl.css" />
@@ -332,6 +315,8 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\mozjob - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\mozjob - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\holder.js" />
     <Content Include="Scripts\holder.min.js" />
@@ -663,9 +648,6 @@
     <Content Include="Scripts\tinymce\utils\mctabs.js" />
     <Content Include="Scripts\tinymce\utils\validate.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Anuncio\HtmlPage1.html" />
-    <Content Include="Views\Anuncio\HtmlPage2.html" />
-    <Content Include="Views\Anuncio\JavaScript1.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -674,11 +656,8 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
@@ -691,27 +670,14 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\AccountOne\Login.cshtml" />
-    <Content Include="Views\AccountOne\Register.cshtml" />
     <Content Include="Views\Shared\_GridVagas.cshtml" />
-    <Content Include="Views\Vaga\Create.cshtml" />
-    <Content Include="Views\Vaga\Delete.cshtml" />
-    <Content Include="Views\Vaga\Details.cshtml" />
-    <Content Include="Views\Vaga\Edit.cshtml" />
-    <Content Include="Views\Vaga\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\tinymce_jquery_full.cshtml" />
     <Content Include="Views\Shared\_ListVagas.cshtml" />
-    <Content Include="Views\Anuncio\Create.cshtml" />
-    <Content Include="Views\Anuncio\Delete.cshtml" />
     <Content Include="Views\Anuncio\Details.cshtml" />
-    <Content Include="Views\Anuncio\Edit.cshtml" />
-    <Content Include="Views\Anuncio\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Anuncio.cshtml" />
     <Content Include="Views\Shared\_LayoutLogged.cshtml" />
     <Content Include="Views\Shared\_SearchPartial.cshtml" />
-    <Content Include="Views\Shared\_Layout1.cshtml" />
-    <Content Include="Views\Anuncio\Index1.cshtml" />
+    <Content Include="Views\Anuncio\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

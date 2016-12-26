@@ -1,0 +1,70 @@
+﻿<div class="center">
+
+
+    @using (@Html.BeginForm("Create", "Anuncio", FormMethod.Get, new { id = "searchForm" }))
+    {
+
+        @Html.AntiForgeryToken()
+        <table>
+
+            <tr>
+                <td colspan="4">
+
+                    <input type="text" class="input-xxlarge input-large-text" />
+
+
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <div class="form-group ">
+
+                        <div class="controls">
+                            @Html.DropDownList("tipoAnuncio", "-- Tipo de Anuncio(Todos) --")
+                        </div>
+
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group ">
+
+                        <div class="controls">
+                            @Html.DropDownList("Status", "-- Estado de Publucacao(Todos) --")
+                        </div>
+
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group ">
+
+                        <div class="controls">
+                            @Html.DropDownList("Lang", "-- Lingua(Todos) --")
+                        </div>
+
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group ">
+
+                        <div class="controls">
+                            @Html.DropDownList("Location", "-- Local(Todos) --")
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+
+
+        </table>
+
+
+        
+            <button class="btn btn-default">Busca</button>
+
+            @*<a class="btn btn-default" href="javascript:document.getElementById('searchForm').submit()">Buscar</a>*@
+        
+
+    }
+
+</div>

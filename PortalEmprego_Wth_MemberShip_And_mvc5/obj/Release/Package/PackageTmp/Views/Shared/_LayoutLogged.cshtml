@@ -1,0 +1,99 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Styles.Render("~/Content/bootstrap/datepicker")
+    @Styles.Render("~/Content/joomla")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/datepicker")
+    @Scripts.Render("//tinymce.cachefly.net/4.0/tinymce.min.js")
+
+
+</head>
+<body class="admin com_content view-article layout-edit task- itemid-" data-spy="scroll" data-target=".subhead" data-offset="87">
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+
+                <div class="nav-collapse">
+                    <ul id="menu" class="nav disabled ">
+                        <li class="disabled"><a class="">Users</a></li>
+                        <li class="disabled"><a class="">Menus</a></li>
+                        <li class="disabled"><a class="">Content</a></li>
+                        <li class="disabled"><a class="">Components</a></li>
+                        <li class="disabled"><a class="">Extensions</a></li>
+                        <li class="disabled"><a class="">Help</a></li>
+                    </ul>
+
+
+                    @Html.Partial("_LoginPartial")
+
+                </div>
+                <!--/.jnav-collapse -->
+            </div>
+        </div>
+    </nav>
+
+
+    @*<div style="margin-bottom: 20px"></div>*@
+    <div>
+        @if (IsSectionDefined("Features") || IsSectionDefined("Menu"))
+        {
+            <aside>
+
+
+                @if (IsSectionDefined("Features"))
+                {
+                    @RenderSection("Features", false)
+                }
+
+
+
+                @if (IsSectionDefined("Menu"))
+                {
+                    @RenderSection("Menu", false)
+                }
+
+
+            </aside>
+
+        }
+
+
+
+
+        <div>
+            @RenderBody()
+        </div>
+
+
+
+
+    </div>
+
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+

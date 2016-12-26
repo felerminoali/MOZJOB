@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PortalEmpregoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="Anuncio" />
+      <PropertyRef Name="Applied_by" />
+    </Key>
+    <Property Name="Anuncio" Type="Int32" Nullable="false" />
+    <Property Name="Applied_by" Type="Int32" Nullable="false" />
+    <Property Name="Applied" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="Candidato" Relationship="Self.FK_Application_Candidato" FromRole="Application" ToRole="Candidato" />
+    <NavigationProperty Name="StatusApplication" Relationship="Self.FK_Application_StatusApplication" FromRole="Application" ToRole="StatusApplication" />
+    <NavigationProperty Name="Anuncio1" Relationship="PortalEmpregoModel.FK_Application_Anucio" FromRole="Application" ToRole="Anuncio" />
+  </EntityType>
+  <EntityType Name="Candidato">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isMale" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Applications" Relationship="Self.FK_Application_Candidato" FromRole="Candidato" ToRole="Application" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CatParent" Type="Int32" />
+    <NavigationProperty Name="Category1" Relationship="PortalEmpregoModel.FK_Category_Category" FromRole="Category" ToRole="Category1" />
+    <NavigationProperty Name="Category2" Relationship="PortalEmpregoModel.FK_Category_Category" FromRole="Category1" ToRole="Category" />
+    <NavigationProperty Name="Anuncios" Relationship="PortalEmpregoModel.FK_Anuncio_Category" FromRole="Category" ToRole="Anuncio" />
+  </EntityType>
+  <EntityType Name="language">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isSelected" Type="Boolean" Nullable="false" />
+    <Property Name="lang_code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="image" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Anuncios" Relationship="PortalEmpregoModel.FK_Anucio_language" FromRole="language" ToRole="Anuncio" />
+  </EntityType>
+  <EntityType Name="Local">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isSelected" Type="Boolean" Nullable="false" />
+    <Property Name="Provincia" Type="Int32" />
+    <NavigationProperty Name="Local1" Relationship="Self.FK_Local_Local" FromRole="Local" ToRole="Local1" />
+    <NavigationProperty Name="Local2" Relationship="Self.FK_Local_Local" FromRole="Local1" ToRole="Local" />
+    <NavigationProperty Name="Anuncios" Relationship="PortalEmpregoModel.FK_Anucio_Local" FromRole="Local" ToRole="Anuncio" />
+  </EntityType>
+  <EntityType Name="Recrutador">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WebSite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isSelected" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Anuncios" Relationship="PortalEmpregoModel.FK_Anucio_Recrutador" FromRole="Recrutador" ToRole="Anuncio" />
+    <NavigationProperty Name="Anuncios1" Relationship="PortalEmpregoModel.FK_Anucio_Recrutador1" FromRole="Recrutador" ToRole="Anuncio" />
+  </EntityType>
+  <EntityType Name="StatusApplication">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isSelected" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Applications" Relationship="Self.FK_Application_StatusApplication" FromRole="StatusApplication" ToRole="Application" />
+  </EntityType>
+  <EntityType Name="StatusVaga">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Anuncios" Relationship="PortalEmpregoModel.FK_Anucio_StatusVaga" FromRole="StatusVaga" ToRole="Anuncio" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Application_Candidato">
+    <End Role="Candidato" Type="Self.Candidato" Multiplicity="1" />
+    <End Role="Application" Type="Self.Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candidato">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Application">
+        <PropertyRef Name="Applied_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Application_StatusApplication">
+    <End Role="StatusApplication" Type="Self.StatusApplication" Multiplicity="0..1" />
+    <End Role="Application" Type="Self.Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusApplication">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Application">
+        <PropertyRef Name="status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Local_Local">
+    <End Role="Local" Type="Self.Local" Multiplicity="0..1" />
+    <End Role="Local1" Type="Self.Local" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Local">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Local1">
+        <PropertyRef Name="Provincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PortalEmpregoContextDB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Applications" EntityType="Self.Application" />
+    <EntitySet Name="Candidatoes" EntityType="Self.Candidato" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="languages" EntityType="Self.language" />
+    <EntitySet Name="Locals" EntityType="Self.Local" />
+    <EntitySet Name="Recrutadors" EntityType="Self.Recrutador" />
+    <EntitySet Name="StatusApplications" EntityType="Self.StatusApplication" />
+    <EntitySet Name="StatusVagas" EntityType="Self.StatusVaga" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_Application_Candidato" Association="Self.FK_Application_Candidato">
+      <End Role="Candidato" EntitySet="Candidatoes" />
+      <End Role="Application" EntitySet="Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Application_StatusApplication" Association="Self.FK_Application_StatusApplication">
+      <End Role="StatusApplication" EntitySet="StatusApplications" />
+      <End Role="Application" EntitySet="Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Local_Local" Association="Self.FK_Local_Local">
+      <End Role="Local" EntitySet="Locals" />
+      <End Role="Local1" EntitySet="Locals" />
+    </AssociationSet>
+    <EntitySet Name="UserProfiles" EntityType="PortalEmpregoModel.UserProfile" />
+    <EntitySet Name="webpages_Membership" EntityType="PortalEmpregoModel.webpages_Membership" />
+    <EntitySet Name="webpages_OAuthMembership" EntityType="PortalEmpregoModel.webpages_OAuthMembership" />
+    <EntitySet Name="webpages_Roles" EntityType="PortalEmpregoModel.webpages_Roles" />
+    <AssociationSet Name="FK_Category_Category" Association="PortalEmpregoModel.FK_Category_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Category1" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="webpages_UsersInRoles" Association="PortalEmpregoModel.webpages_UsersInRoles">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+    </AssociationSet>
+    <EntitySet Name="Anuncios" EntityType="PortalEmpregoModel.Anuncio" />
+    <AssociationSet Name="FK_Anucio_language" Association="PortalEmpregoModel.FK_Anucio_language">
+      <End Role="language" EntitySet="languages" />
+      <End Role="Anuncio" EntitySet="Anuncios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anucio_Local" Association="PortalEmpregoModel.FK_Anucio_Local">
+      <End Role="Local" EntitySet="Locals" />
+      <End Role="Anuncio" EntitySet="Anuncios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anucio_Recrutador" Association="PortalEmpregoModel.FK_Anucio_Recrutador">
+      <End Role="Recrutador" EntitySet="Recrutadors" />
+      <End Role="Anuncio" EntitySet="Anuncios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anucio_Recrutador1" Association="PortalEmpregoModel.FK_Anucio_Recrutador1">
+      <End Role="Recrutador" EntitySet="Recrutadors" />
+      <End Role="Anuncio" EntitySet="Anuncios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anucio_StatusVaga" Association="PortalEmpregoModel.FK_Anucio_StatusVaga">
+      <End Role="StatusVaga" EntitySet="StatusVagas" />
+      <End Role="Anuncio" EntitySet="Anuncios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anuncio_Category" Association="PortalEmpregoModel.FK_Anuncio_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Anuncio" EntitySet="Anuncios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Application_Anucio" Association="PortalEmpregoModel.FK_Application_Anucio">
+      <End Role="Anuncio" EntitySet="Anuncios" />
+      <End Role="Application" EntitySet="Applications" />
+    </AssociationSet>
+    <EntitySet Name="TipoAnuncios" EntityType="PortalEmpregoModel.TipoAnuncio" />
+    <AssociationSet Name="FK_Anuncio_TipoAnuncio" Association="PortalEmpregoModel.FK_Anuncio_TipoAnuncio">
+      <End Role="TipoAnuncio" EntitySet="TipoAnuncios" />
+      <End Role="Anuncio" EntitySet="Anuncios" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="56" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="webpages_Roles" Relationship="PortalEmpregoModel.webpages_UsersInRoles" FromRole="UserProfile" ToRole="webpages_Roles" />
+  </EntityType>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ConfirmationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsConfirmed" Type="Boolean" />
+    <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="webpages_OAuthMembership">
+    <Key>
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="ProviderUserId" />
+    </Key>
+    <Property Name="Provider" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderUserId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserProfiles" Relationship="PortalEmpregoModel.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="UserProfile" />
+  </EntityType>
+  <Association Name="FK_Category_Category">
+    <End Type="PortalEmpregoModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="PortalEmpregoModel.Category" Role="Category1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Category1">
+        <PropertyRef Name="CatParent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="webpages_UsersInRoles">
+    <End Type="PortalEmpregoModel.webpages_Roles" Role="webpages_Roles" Multiplicity="*" />
+    <End Type="PortalEmpregoModel.UserProfile" Role="UserProfile" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Anuncio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="startPub" Type="DateTime" Precision="3" />
+    <Property Name="finishPub" Type="DateTime" Precision="3" />
+    <Property Name="created" Type="DateTime" Precision="3" />
+    <Property Name="Modified" Type="DateTime" Precision="3" />
+    <Property Name="publish_up" Type="DateTime" Precision="3" />
+    <Property Name="publish_down" Type="DateTime" Precision="3" />
+    <Property Name="UrlImg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Conteudo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="created_by" Type="Int32" />
+    <Property Name="Modified_by" Type="Int32" />
+    <Property Name="Location" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Lang" Type="Int32" />
+    <Property Name="category" Type="Int32" />
+    <Property Name="tipoAnuncio" Type="Int32" />
+    <NavigationProperty Name="language" Relationship="PortalEmpregoModel.FK_Anucio_language" FromRole="Anuncio" ToRole="language" />
+    <NavigationProperty Name="Local" Relationship="PortalEmpregoModel.FK_Anucio_Local" FromRole="Anuncio" ToRole="Local" />
+    <NavigationProperty Name="Recrutador" Relationship="PortalEmpregoModel.FK_Anucio_Recrutador" FromRole="Anuncio" ToRole="Recrutador" />
+    <NavigationProperty Name="Recrutador1" Relationship="PortalEmpregoModel.FK_Anucio_Recrutador1" FromRole="Anuncio" ToRole="Recrutador" />
+    <NavigationProperty Name="StatusVaga" Relationship="PortalEmpregoModel.FK_Anucio_StatusVaga" FromRole="Anuncio" ToRole="StatusVaga" />
+    <NavigationProperty Name="Category1" Relationship="PortalEmpregoModel.FK_Anuncio_Category" FromRole="Anuncio" ToRole="Category" />
+    <NavigationProperty Name="Applications" Relationship="PortalEmpregoModel.FK_Application_Anucio" FromRole="Anuncio" ToRole="Application" />
+    <NavigationProperty Name="TipoAnuncio1" Relationship="PortalEmpregoModel.FK_Anuncio_TipoAnuncio" FromRole="Anuncio" ToRole="TipoAnuncio" />
+  </EntityType>
+  <Association Name="FK_Anucio_language">
+    <End Type="PortalEmpregoModel.language" Role="language" Multiplicity="0..1" />
+    <End Type="PortalEmpregoModel.Anuncio" Role="Anuncio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Anuncio">
+        <PropertyRef Name="Lang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anucio_Local">
+    <End Type="PortalEmpregoModel.Local" Role="Local" Multiplicity="0..1" />
+    <End Type="PortalEmpregoModel.Anuncio" Role="Anuncio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Local">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Anuncio">
+        <PropertyRef Name="Location" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anucio_Recrutador">
+    <End Type="PortalEmpregoModel.Recrutador" Role="Recrutador" Multiplicity="0..1" />
+    <End Type="PortalEmpregoModel.Anuncio" Role="Anuncio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recrutador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Anuncio">
+        <PropertyRef Name="created_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anucio_Recrutador1">
+    <End Type="PortalEmpregoModel.Recrutador" Role="Recrutador" Multiplicity="0..1" />
+    <End Type="PortalEmpregoModel.Anuncio" Role="Anuncio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Recrutador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Anuncio">
+        <PropertyRef Name="Modified_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anucio_StatusVaga">
+    <End Type="PortalEmpregoModel.StatusVaga" Role="StatusVaga" Multiplicity="0..1" />
+    <End Type="PortalEmpregoModel.Anuncio" Role="Anuncio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusVaga">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Anuncio">
+        <PropertyRef Name="Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anuncio_Category">
+    <End Type="PortalEmpregoModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="PortalEmpregoModel.Anuncio" Role="Anuncio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Anuncio">
+        <PropertyRef Name="category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Application_Anucio">
+    <End Type="PortalEmpregoModel.Anuncio" Role="Anuncio" Multiplicity="1" />
+    <End Type="PortalEmpregoModel.Application" Role="Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Anuncio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Application">
+        <PropertyRef Name="Anuncio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TipoAnuncio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Anuncios" Relationship="PortalEmpregoModel.FK_Anuncio_TipoAnuncio" FromRole="TipoAnuncio" ToRole="Anuncio" />
+  </EntityType>
+  <Association Name="FK_Anuncio_TipoAnuncio">
+    <End Type="PortalEmpregoModel.TipoAnuncio" Role="TipoAnuncio" Multiplicity="0..1" />
+    <End Type="PortalEmpregoModel.Anuncio" Role="Anuncio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAnuncio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Anuncio">
+        <PropertyRef Name="tipoAnuncio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

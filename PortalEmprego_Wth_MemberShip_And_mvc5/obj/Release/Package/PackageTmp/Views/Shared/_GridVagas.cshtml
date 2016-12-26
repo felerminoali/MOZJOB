@@ -1,0 +1,53 @@
+﻿@model PortalEmprego_Wth_MemberShip_And_mvc5.Models.Anuncio
+
+
+<div class="col-xs-6 col-sm-3 placeholder" style="padding-bottom:20px;">
+
+
+    <div class="thumbnail wow">
+
+
+        <img data-src="holder.js/200x200/auto/#DCE2F2:#636363/text:@Model.title \n (M\F) \n \n @if(@Model.created_by != null) {@Model.Recrutador.Name}
+                                                                                               else { var s = " - "; @s }@if(@Model.Location != null) {@Model.Local.Name}
+                                                                                               else { var s = ""; @s }" class="img-responsive img-circle" alt="Generic placeholder thumbnail">
+        <div class="caption">
+           
+
+            @if (@Model.category != null)
+            {
+            <p><h4><small>@Model.Category1.Name</small> <span class="label label-success pull-right">New</span> </h4></p>
+            }
+            else { 
+            <p><h4><small>Erro</small> <span class="label label-success pull-right">New</span> </h4></p>
+            }
+            
+         </div>
+        <br />
+        <div class="overlay">
+            <div class="container">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+               
+                <p> &nbsp; &nbsp;  
+                    <a class="btn btn-primary" role="button" href="@Url.Action("Details", "Anuncio", new { id = @Model.Id })"><span class="glyphicon glyphicon-eye-open"></span> Details</a>
+                </p>
+
+                <br />
+                <br />
+                
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
