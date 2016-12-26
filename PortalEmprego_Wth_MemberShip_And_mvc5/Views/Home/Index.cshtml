@@ -2,9 +2,6 @@
 @using PagedList.Mvc;
 
 @model IPagedList<PortalEmprego_Wth_MemberShip_And_mvc5.Models.Anuncio>
-@using PortalEmprego_Wth_MemberShip_And_mvc5.CustomHtmlHelpers
-
-
 
 @{
     ViewBag.Title = "Index";
@@ -18,32 +15,18 @@
 
         <div class="wellColour col-md-3">
 
-
-
             <div class="container">
-
-
-
-
                 <div style="margin-bottom:20px;">
-                    <h1>Filtros</h1>
+                    <h1>Filters</h1>
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
                             <div class="panel-heading" role="tab" id="headingOne">
                                 <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        @*@{
-                                                List<PortalEmprego_Wth_MemberShip_And_mvc5.Models.Local> loc = ViewBag.Location;
-                                            }
-
-                                            Locais <span class="badge pull-right">@loc.Count()</span>*@
-
                                         @{
                                             List<object> loc = ViewBag.Location;
                                         }
-
-                                        Locais <span class="badge pull-right">@loc.Count()</span>
-
+                                        Location <span class="badge pull-right">@loc.Count()</span>
                                     </a>
                                 </h4>
                             </div>
@@ -51,19 +34,11 @@
                                 <div class="panel-body">
                                     <ul class="nav nav-sidebar">
 
-
-                                        @*@foreach (PortalEmprego_Wth_MemberShip_And_mvc5.Models.Local locais in ViewBag.Location)
-                                            {
-                                                    <li><input type="checkbox" id="checkAll" title="Check All" /><span> @locais.Name</span><span class="pull-right"> 14</span></li>
-                                            }*@
-
                                         @foreach (object locais in ViewBag.Location)
                                         {
-
                                             string LocalName = (string)@locais.GetType().GetProperty("Name").GetValue(locais, null);
                                             int count = (int)@locais.GetType().GetProperty("Count").GetValue(locais, null);
                                             int id = (int)@locais.GetType().GetProperty("Id").GetValue(locais, null);
-
 
                                             <li><input type="checkbox" name="checkFilter" id="checkFilter" value="@id" /><span>  @LocalName</span><span class="pull-right"> @count</span></li>
                                         }
@@ -77,18 +52,11 @@
                                 <h4 class="panel-title">
                                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 
-                                        @*@{
-                                                List<PortalEmprego_Wth_MemberShip_And_mvc5.Models.Category> cat = ViewBag.category;
-                                            }
-
-
-                                            Categorias <span class="badge pull-right">@cat.Count()</span>*@
-
                                         @{
                                             List<object> cat = ViewBag.category;
                                         }
 
-                                        Categorias <span class="badge pull-right">@cat.Count()</span>
+                                        Categories <span class="badge pull-right">@cat.Count()</span>
 
                                     </a>
                                 </h4>
@@ -97,13 +65,6 @@
                                 <div class="panel-body">
 
                                     <ul class="nav nav-sidebar">
-
-
-
-                                        @*@foreach (PortalEmprego_Wth_MemberShip_And_mvc5.Models.Category categories in ViewBag.category)
-                                            {
-                                                <li><input type="checkbox" id="checkAll" title="Check All" /><span> @categories.Name</span><span class="pull-right"> 14</span></li>
-                                            }*@
 
                                         @foreach (object categories in ViewBag.category)
                                         {
@@ -118,34 +79,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="headingThree">
-                                <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Collapsible Group Item #3
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
-
-
-
-
-
-
-
-
             </div>
-
-
-
 
         </div>
 
@@ -157,8 +94,6 @@
                 @using (@Html.BeginForm("Index1", "Anuncio", FormMethod.Get, new { id = "searchForm" }))
                 {
                     <div class="row">
-
-
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="container">
@@ -166,10 +101,10 @@
                                     <div class="col-lg-12">
                                         <div class="input-group">
 
-                                            @Html.TextBox("search", null, new { @class = "form-control", placeholder = "Pesquisar por...", id = "txtSearch" })
+                                            @Html.TextBox("search", null, new { @class = "form-control", placeholder = "Keyword...", id = "txtSearch" })
 
                                             <span class="input-group-btn">
-                                                <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span> Buscar</button>
+                                                <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span> Search</button>
                                             </span>
                                         </div><!-- /input-group -->
                                     </div><!-- /.col-lg-6 -->
@@ -191,57 +126,56 @@
                 <div class="col-md-11">
 
                     <div class="control-group">
-                        <h2>
-                            Anucios
 
-                            @if (@Model.Count > 0)
-                            {
+                        @if (@Model.Count > 0)
+                        {
 
+                            <h2>
+                                Vacancies
 
+                                @{
+                                    int total = ViewBag.totalAnuncios;
+                                    <small>(@total results found)</small>
+                                }
+                            </h2>
 
-                                int total = ViewBag.totalAnuncios;
+                            <div style="margin-bottom:10px">
 
+                                <a id="gridlink" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-th-large"> </span>
+                                </a>
 
-                                <small>(Cerca de @total Resultados encontrados)</small>
-                            }
-                        </h2>
+                                <a id="listlink" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-th-list"> </span>
+                                </a>
 
-                        <div style="margin-bottom:10px">
+                                <div class="pull-right">
 
-                            <a id="gridlink" class="btn btn-default">
-                                <span class="glyphicon glyphicon-th-large"> </span>
-                            </a>
+                                    @Html.PagedListPager(Model, page => Url.Action("Index",
+                                              new
+                                              {
+                                                  page
+                                              }),
+                                                new PagedListRenderOptions()
+                                                {
+                                                    Display = PagedListDisplayMode.IfNeeded,
+                                                    DisplayPageCountAndCurrentLocation = true
+                                                })
 
-
-                            <a id="listlink" class="btn btn-default">
-                                <span class="glyphicon glyphicon-th-list"> </span>
-                            </a>
-
-                            <a id="pielink" class="btn btn-default">
-                                <span class="glyphicon glyphicon-stats"> </span>
-                            </a>
-
-                            <div class="pull-right">
-
-                                @Html.PagedListPager(Model, page => Url.Action("Index",
-                                        new
-                                        {
-                                            page
-                                            //  ,
-                                            //searchBy = Request.QueryString["searchBy"],
-                                            //search = Request.QueryString["search"]
-                                        }),
-                                          new PagedListRenderOptions()
-
-                                        {
-                                            Display = PagedListDisplayMode.IfNeeded,
-
-                                            DisplayPageCountAndCurrentLocation = true
-                                        })
+                                </div>
 
                             </div>
 
-                        </div>
+                                    }
+                                    else
+                                    {
+
+                                        <div class="alert alert-warning">
+                                            <p> Empty results </p>
+                                        </div>
+
+                                    }
+
                     </div>
 
                 </div>
@@ -275,7 +209,7 @@
                         {
 
                             <div class="alert alert-warning">
-                                <p> Nenhuma vaga encontrada </p>
+                                <p> Empty results </p>
                             </div>
 
                         }
@@ -310,49 +244,20 @@
 
                                 <tbody>
                                     @Html.EditorForModel()
-
                                 </tbody>
                             </table>
 
-                            @*foreach (var vaga in Model)
-                                {
-                                    @Html.Partial("_GridVagas", vaga)
-                                }*@
                         }
                         else
                         {
-
                             <div class="alert alert-warning">
-                                <p> Nenhuma vaga encontrada </p>
+                                <p> Empty results </p>
                             </div>
-
                         }
 
                     </div>
-
-
                 </div>
-
-
             </div>
-
-
-            <div id="divPieChart">
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <div class="container">
-                            <div id="piechart" style="width: 500px; height: 350px; margin:0px; padding:0px" />
-                        </div>
-
-                    </div>
-                </div>
-
-
-
-            </div>
-
-
 
         </div>
 
@@ -377,21 +282,16 @@
         $(document).ready(function () {
             $("#gridlink").click(function () {
                 $("#divlist").hide();
-                $("#piechart").hide();
                 $("#divgrid").show();
             });
 
             $("#listlink").click(function () {
                 $("#divlist").show();
                 $("#divgrid").hide();
-                $("#piechart").hide();
+
             });
 
-            $("#pielink").click(function () {
-                $("#divlist").hide();
-                $("#divgrid").hide();
-                $("#piechart").show();
-            });
+
         })
     </script>
 
@@ -427,7 +327,7 @@
             $("input[name='checkFilter']").click(function () {
                 var url = "/Home/Index";
                 var name = $('#checkFilter').val();
-                $.get(url, {input:name}, function (data, status) {
+                $.get(url, { input: name }, function (data, status) {
                     if (!data.success) {
                         alert('User ID is invalid!');
                     }
